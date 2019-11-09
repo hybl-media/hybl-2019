@@ -207,4 +207,13 @@ ul {
 }
 
 
+/* ----> About Us <---- */
+
+.about-us {
+    padding-top: 100px;
+}
+.about div img {
+    max-width: 100%;
+}
+
 
