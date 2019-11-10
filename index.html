@@ -4,71 +4,115 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>hybl.dk</title>
+
+    <!-- DEPENDENCIES -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- STYLING -->
     <link rel="stylesheet" href="style.css" type="text/css">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,900&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
-      <div>
-            <header class="page-center">
-                    <div id="logo">
-                        <a href="#forside"><img src="img/logo1.0.png"></a>
-                    </div>
-                    <div id="burgerMenu">
-                        <div class="one"></div>
-                        <div class="two"></div>
-                        <div class="three"></div>
-                    </div>
-        
-                    <nav id="menuPunkter">
-                        <ul class="menuLinks">
-                            <li class="menuLink1"><a href="#forside"> Forside </a></li>
-                            <li class="menuLink2"><a href="#projekter"> Cases </a></li>
-                            <li class="menuLink3"><a href="#hvorforos"> Hvorfor os? </a></li>
-                            <li class="menuLink4"><a href="#kontaktinfo"> Kontakt </a></li>
-                        </ul>
-                    </nav>
-            </header>
-            
-            <main>
-                <section></section>
-                <section></section>
-                <section class="about-us">
-                  <div class="about">
-                    <div class="page-center">
-                      <div class="about-text">
-                          <h1>Passion for <span class="grøntekst">webudvikling</span></h1>
-                          <p>For os er det en drøm at beskæftige sig med webudvikling, da det giver en unik mulighed for at kombinere kompetencer inden for kreative discipliner såsom animation, illustration og programmering.</p>
-                      </div>
-                          <img src="img/skrivebordsmand.png">
-                    </div>
+    <header class="page-center">
+            <div id="logo">
+                <a href="#forside"><img src="img/logo1.0.png"></a>
+            </div>
+            <div id="burgerMenu">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+
+            <nav id="menuPunkter">
+                <ul class="menuLinks">
+                    <li class="menuLink1"><a href="#forside"> Forside </a></li>
+                    <li class="menuLink2"><a href="#projekter"> Cases </a></li>
+                    <li class="menuLink3"><a href="#hvorforos"> Hvorfor os? </a></li>
+                    <li class="menuLink4"><a href="#kontaktinfo"> Kontakt </a></li>
+                </ul>
+            </nav>
+    </header>
+    
+    <main>
+        <section class="cases">
+          <h2 class="page-center title--underline">Cases</h2>
+          <div class="cases__grid page-center">
+            <div class="cases__item">
+              <div class="cases__tag">WEBSHOP</div>
+              <a href="" class="cases__item-container">
+                <div class="cases__item-info">
+                  <div class="cases__item-info--container">
+                    <h3 class="cases__item-title">Buchwalds Kafferisteri</h3>
+                    <p>I dette projekt har vi designet og implementeret en webshop til Buchwalds kafferisteri, som er et mikroristeri på Bornholm.</p>
+                    <span class="cases__item-cta">Læs mere</span>
                   </div>
-                  <div class="divider-skewed white"></div>
-                  <div class="about">
-                    <div class="page-center">
-                        <div class="about-text">
-                            <h1><span class="grøntekst">Personligt</span> samarbejde</h1>
-                            <p>Vi er tre designstuderende fra IT-Universittetet der tager sig tid til den enkelte kunde.
-                                Ved at lære dig og dit projekt at kende, kan vi sammen skabe en skarp løsning tilpasset dine behov.</p>
-                        </div>
-                        <img src="img/kunde-snak.png">
+                  <div class="cases__item-info--background"></div>
+                </div>
+                <div class="cases__image">
+                    <div class="cases__image-fill buchwald-color"></div>
+                    <img src="img/cases/cases__buchwald.png" alt=""/>
+                </div>
+              </a>
+            </div>
+            <div class="cases__item">
+                <div class="cases__tag">WEBSITE</div>
+                <a href="" class="cases__item-container">
+                  <div class="cases__item-info">
+                    <div class="cases__item-info--container">
+                      <h3 class="cases__item-title">Bryllupsbartender</h3>
+                      <p>I dette projekt har vi designet og implementeret en webshop til Buchwalds kafferisteri, som er et mikroristeri på Bornholm.</p>
+                      <span class="cases__item-cta">Læs mere</span>
                     </div>
+                    <div class="cases__item-info--background"></div>
                   </div>
-                  <div class="divider-skewed grey"></div>
-                  <div class="about">
-                    <div class="page-center">
-                        <div class="about-text">
-                        <h1><span class="grøntekst">Nytænkende</span> design</h1>
-                        <p>Som design-studerende kender vi til de nyeste tendenser inden for digitalt design. Derfor ved vi hvordan man skaber attraktivve løsninger, som giver gode brugeroplevelser.</p>
-                        </div>
-                        <img src="img/trends.magnus.png">
-                    </div>
+                  <div class="cases__image">
+                      <div class="cases__image-fill buchwald-color"></div>
+                      <img src="img/cases/cases__buchwald.png" alt=""/>
                   </div>
-                  
-                </section>
-            </main>
-      </div>
-      <script src="js/menu.js"></script>
+                </a>
+              </div>
+          </div>
+        </section>
+        <section></section>
+        <section class="about-us">
+          <div class="about">
+            <div class="page-center">
+              <div class="about-text">
+                  <h1>Passion for <span class="grøntekst">webudvikling</span></h1>
+                  <p>For os er det en drøm at beskæftige sig med webudvikling, da det giver en unik mulighed for at kombinere kompetencer inden for kreative discipliner såsom animation, illustration og programmering.</p>
+              </div>
+                  <img src="img/skrivebordsmand.png">
+            </div>
+          </div>
+          <div class="divider-skewed white"></div>
+          <div class="about">
+            <div class="page-center">
+                <div class="about-text">
+                    <h1><span class="grøntekst">Personligt</span> samarbejde</h1>
+                    <p>Vi er tre designstuderende fra IT-Universittetet der tager sig tid til den enkelte kunde.
+                        Ved at lære dig og dit projekt at kende, kan vi sammen skabe en skarp løsning tilpasset dine behov.</p>
+                </div>
+                <img src="img/kunde-snak.png">
+            </div>
+          </div>
+          <div class="divider-skewed grey"></div>
+          <div class="about">
+            <div class="page-center">
+                <div class="about-text">
+                <h1><span class="grøntekst">Nytænkende</span> design</h1>
+                <p>Som design-studerende kender vi til de nyeste tendenser inden for digitalt design. Derfor ved vi hvordan man skaber attraktivve løsninger, som giver gode brugeroplevelser.</p>
+                </div>
+                <img src="img/trends.magnus.png">
+            </div>
+          </div>
+          
+        </section>
+    </main>
+    <script src="js/menu.js"></script>
   </body>
 </html>
