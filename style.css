@@ -31,6 +31,10 @@ ul {
     padding-left: 7.15%;
 }
 
+.grøntekst {
+    color: #016b68;
+}
+
 /* ----> NAVIGATION <---- */
 
 /* Logo */
@@ -212,8 +216,48 @@ ul {
 .about-us {
     padding-top: 100px;
 }
+.about {
+    padding-top: 50px;
+}
 .about div img {
+    max-width: 100%;
+}
+.about-text {
     max-width: 100%;
 }
 
 
+.about:first-child {
+    background-color: #F2F2F2;
+}
+.about:last-child {
+    background-color: #F2F2F2;
+}
+.divider-skewed.grey {
+    background: linear-gradient(to left bottom, white 49%, #f2f2f2 50%);
+    height: 25px;
+    margin-top: 0;
+}
+.divider-skewed.white {
+    background: linear-gradient(to right bottom, #f2f2f2 49%, white 50%);
+    height: 25px;
+    margin-top: 0;
+}
+
+/* ----> Media queries <---- */
+
+@media only screen and (min-width: 768px) {
+    .about div img {
+        width: 50%;
+    }
+    .about-text {
+        width: 50%;
+    }
+    .about .page-center {
+        display: flex;
+        align-items: flex-start;
+    }
+    .page-center img {
+        order: -1;
+    }
+}
