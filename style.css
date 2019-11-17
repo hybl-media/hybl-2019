@@ -27,7 +27,9 @@ ul {
 *{
     font-family:'montserrat', sans-serif;
 }
-
+p {
+    font-size: 15px;
+}
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
@@ -385,7 +387,8 @@ h3{
     padding-top: 100px;
 }
 .about {
-    padding-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .about div img {
     max-width: 100%;
@@ -423,11 +426,15 @@ h3{
     }
     .about .page-center {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
     }
-    .page-center img {
+    .about-us div:first-child div img {
         order: -1;
     }
+    .about-us div:last-child div img {
+        order: -1;
+    }
+
 
     .cases__item{
         width:40%;
