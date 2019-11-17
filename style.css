@@ -432,6 +432,28 @@ h3{
     height: 25px;
     margin-top: 0;
 }
+/* ----> FOOTER  <---- */
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+footer {
+    background-color: #F2F2F2;
+    padding-bottom: 50px;
+    padding-top: 40px;
+}
+
+footer div img {
+    width: 38px;
+    margin-top: 20px;
+}
+
+
+
 
 /* ----> Media queries <---- */
 
