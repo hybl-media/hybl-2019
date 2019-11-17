@@ -257,6 +257,29 @@ h3{
     -o-transition: all 0.3s ease-out;
 }
 
+/*=== PRIS ESTIMERING ===*/
+.estimering__container{
+    position:absolute;
+    display:flex;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:10;
+}
+.estimering__intro{
+    height:100%;
+    width:50%;
+    background-color:#FFFFFF;
+    padding:50px;
+    box-sizing:border-box;
+}
+.estimering__formular{
+    height:100%;
+    width:50%;
+    background-color:#F2F2F2;
+}
+
 /* Menu links */
 
 .menuLink1,
