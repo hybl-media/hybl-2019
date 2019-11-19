@@ -115,6 +115,310 @@ p.title--underline::after{
     -o-transition: all 0.3s ease-out;
 }
 
+/*=== PRIS ESTIMERING ===*/
+.estimering__container.estimering__init{
+    display:none;
+}
+.estimering__container.estimering__close{
+    animation:estClose 0.7s forwards;
+}
+@keyframes estClose{
+    0%{
+        z-index:100;
+    }
+    100%{
+        z-index:-1;
+    }
+}
+.estimering__container.estimering__open{
+    animation:estOpen 0.7s forwards;
+}
+@keyframes estOpen{
+    0%{
+        z-index:-1;
+    }
+    100%{
+        z-index:100;
+    }
+}
+
+.estimering__close .estimering__formular{
+    animation:estCloseRight 0.5s 0.2s forwards;
+}
+.estimering__close .estimering__intro{
+    animation:estCloseLeft 0.5s forwards;
+}
+@keyframes estCloseRight{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(100%);
+    }
+}
+@keyframes estCloseLeft{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-100%);
+    }
+}
+.estimering__open .estimering__formular{
+    animation:estOpenRight 0.7s forwards;
+}
+.estimering__open .estimering__intro{
+    animation:estOpenLeft 0.5s forwards;
+}
+@keyframes estOpenRight{
+    0%{
+        transform:translateX(100%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+@keyframes estOpenLeft{
+    0%{
+        transform:translateX(-100%);
+    }
+    100%{
+        transform:translateX(0);
+    }
+}
+.estimering__close .estimering__exit{
+    visibility:hidden;
+}
+.estimering__open .estimering__exit{
+    visibility:initial;
+}
+button.estimering__open{
+    margin: 100px auto 0 auto;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    outline:none;
+}
+button.title--underline::after{
+    transform: scaleY(0.5);
+    top:-6px;
+}
+button.estimering__open:hover{
+    cursor:pointer;
+}
+
+
+.estimering__container{
+    overflow:hidden;
+    position:fixed;
+    display:flex;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:10;
+}
+.estimering__exit {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    z-index:101;
+}
+  .estimering__exit:hover {
+    opacity: 1;
+}
+  .estimering__exit:before, .estimering__exit:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+  .estimering__exit:before {
+    transform: rotate(45deg);
+}
+  .estimering__exit:after {
+    transform: rotate(-45deg);
+}
+.estimering__inner{
+    height:100%;
+    width:100%;
+    display:flex;
+}
+.estimering__intro{
+    height:100%;
+    width:50%;
+    background-color:#FFFFFF;
+    padding: 75px 50px;
+    box-sizing:border-box;
+}
+.estimering__formular{
+    height:100%;
+    width:50%;
+    background-color:#F2F2F2;
+}
+
+.estimering__formular form{
+    height:100%;
+    padding: 75px 50px;
+    box-sizing:border-box;
+
+}
+.estimering__step{
+    padding:0;
+    border:none;
+    height: 100%;
+    flex-direction: column;
+    box-sizing:border-box;
+}
+.estimering__step--show{
+    opacity:1;
+    display:flex;
+    animation:fadeIn 0.5s;
+}
+.estimering__step--hidden{
+    opacity:0;
+    display:none;
+}
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+
+.estimering__step--header h2{
+    margin-top: 0;
+}
+.estimering__step--input{
+    display: flex;
+    flex-direction: column;
+}
+.estimering__step--1 input{
+    visibility: hidden;
+    position:absolute;
+}
+.estimering__step.estimering__step--1 label{
+    cursor:pointer;
+    font-size:24px;
+    margin-bottom:20px;
+}
+.estimering__step.estimering__step--1 label:hover{
+    cursor:pointer;
+    visibility:initial;
+}
+.estimering__step.estimering__step--1 label::after{
+    content:"";
+    content: url('img/arrow.png');
+    visibility:hidden;
+    margin-left: 10px;
+    position: absolute;
+}
+.estimering__step.estimering__step--1 label:hover::after{
+    visibility:initial;
+    animation:fadeInArrowRight 0.5s;
+}
+@keyframes fadeInArrowRight{
+    0%{
+        opacity:0;
+        transform:translateX(-5px)
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0)
+    }
+}
+@keyframes fadeInArrowLeft{
+    0%{
+        opacity:0;
+        transform:translateX(5px) rotate(180deg);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0) rotate(180deg);
+
+    }
+}
+
+.estimering__prisspænd{
+    display:flex;
+    align-items:center;
+}
+.estimering__prisspænd span{
+    font-size:16px;
+    font-weight:600;
+    margin: 0 10px 10px 10px;
+}
+.estimering__prisspænd input{
+    width: 50%;
+}
+
+.estimering__step input{
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 12px;
+    margin: 10px 0 15px 0;
+    outline: none;
+}
+.estimering__step textarea{
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px 12px;
+    margin: 10px 0 15px 0;
+    outline: none;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100px;
+    max-height: 500px;
+    box-sizing: border-box;
+}
+.estimering__step label{
+    font-size:18px;
+}
+.estimering__controls{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+}
+.estimering__controls a:hover{
+    color:black;
+}
+.estimering__controls a, .estimering__controls input{
+    background-color:transparent;
+    margin:10px;
+    font-size:18px;
+}
+.estimering__controls a:last-child::after, .estimering__controls a:first-child::before{
+    content:"";
+    content: url('img/arrow.png');
+    visibility:hidden;
+    margin-left: 5px;
+    position: absolute;
+}
+.estimering__controls a:first-child::before{
+    transform-origin: left;
+    margin-left: -5px;
+    padding-right: 10px;
+}
+.estimering__controls a:last-child:hover::after{
+    visibility:initial;
+    animation:fadeInArrowRight 0.5s;
+}
+.estimering__controls a:first-child:hover::before{
+    visibility:initial;
+    transform:translateX(0) rotate(180deg);
+    animation:fadeInArrowLeft 0.5s;
+}
+
 /* Menu links */
 
 .menuLink1,
