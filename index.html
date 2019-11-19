@@ -17,55 +17,77 @@
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,900&display=swap" rel="stylesheet">
 
+    <!-- CUSTOM SCRIPTS -->
+    <script src="hybl.js"></script>
+
   </head>
 
   <body>
-    <div class="estimering__container">
-      <div class="estimering__intro">
-        <h1>Lad os estimere <span class="grøntekst">dit projekt.</span></h1>
-        <p>lad os starte en dialog om dit projekt.</p>
-        <p>Du kan også ringe eller skrive til os på hello@hybl.dk  / +45 51 89 98 43</p>
+    <div class="estimering__container estimering__init">
+      <a href="#" class="estimering__exit"></a>
+      <div class="estimering__inner">
+          <div class="estimering__intro">
+              <h1>Lad os estimere <span class="grøntekst">dit projekt.</span></h1>
+              <p>lad os starte en dialog om dit projekt.</p>
+              <p>Du kan også ringe eller skrive til os på hello@hybl.dk  / +45 51 89 98 43</p>
+            </div>
+            <div class="estimering__formular">
+                <form action="mail.php" method="POST">
+                  <div class="estimering__step estimering__step--1 estimering__step--show">
+                    <div class="estimering__step--header">
+                        <span>1/3</span>
+                        <h2>Vælg projekttype</h2>
+                    </div>
+                    <div class="estimering__step--input">
+                        <label><input type="radio" name="projekttype" value="website">Website</label>
+                        <label><input type="radio" name="projekttype" value="webshop">Webshop</label>
+                        <label><input type="radio" name="projekttype" value="film eller animation">Film eller animation</label>
+                        <label><input type="radio" name="projekttype" value="andet">Andet</label>
+                    </div>
+                  </div>
+                  <div class="estimering__step estimering__step--2 estimering__step--hidden" data="stepid-2">
+                      <div class="estimering__step--header">
+                        <span>2/3</span>
+                        <h2>Beskriv projektet så godt du kan</h2>
+                      </div>
+                      <div class="estimering__step--input">
+                        <label>Indtast prisspænd i kr.</label>
+                        <div class="estimering__prisspænd">
+                            <input type="text" name="pris-min" value="" placeholder="kr.">
+                            <span> - </span>
+                            <input type="text" name="pris-max" value="" placeholder="kr.">
+                        </div>
+                        <textarea name="besked" rows="6" cols="25"></textarea>
+                        <div class="estimering__controls">
+                            <a href="#" class="estimering__step--back">Tilbage</a>
+                            <a href="#" class="estimering__step--next">Næste</a>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="estimering__step estimering__step--3 estimering__step--hidden" data="stepid-3">
+                      <div class="estimering__step--header">  
+                        <span>3/3</span>
+                        <h2>Hvordan kan vi kontakte dig?</h2>
+                      </div>
+                      <div class="estimering__step--input">
+                        <label>Navn</label>
+                        <input type="text" name="name">
+                        <label>E-mail</label>
+                        <input type="email" name="email">
+                        <label>Virksomhed</label>
+                        <input type="text" name="business">
+                        <label>Tlf.</label>
+                        <input type="text" name="phone">
+                        <div class="estimering__controls">
+                            <a href="#" class="estimering__step--back">Tilbage</a>
+                            <input type="submit" value="Bekræft">
+                          </div>
+                      </div>
+                    </div>              
+                </form>
+            </div>
       </div>
-      <div class="estimering__formular">
-          <form>
-            <fieldset class="estimering__step estimering__step--1">
-              <span>1/3</span>
-              <h2>Vælg projekttype</h2>
-              <label><input type="radio" name="projekttype" value="website">Website</label>
-              <label><input type="radio" name="projekttype" value="webshop">Webshop</label>
-              <label><input type="radio" name="projekttype" value="film eller animation">Film eller animation</label>
-              <label><input type="radio" name="projekttype" value="andet">Andet</label>
 
-            </fieldset>
-            <fieldset class="estimering__step estimering__step--1">
-                <span>2/3</span>
-                <h2>Beskriv projektet så godt du kan</h2>
-                <label>Indtast prisspænd i kr.</label>
-                <input type="radio" name="projekttype" value="website">
-                -
-                <input type="radio" name="projekttype" value="website">
-                <label><input type="radio" name="projekttype" value="webshop">Webshop</label>
-                <label><input type="radio" name="projekttype" value="film eller animation">Film eller animation</label>
-                <label><input type="radio" name="projekttype" value="andet">Andet</label>
-  
-              </fieldset>
-              <fieldset class="estimering__step estimering__step--1">
-                  <span>3/3</span>
-                  <h2>Hvordan kan vi kontakte dig?</h2>
-                  <label>Navn</label>
-                  <input type="text" name="kontakt">
-                  <label>E-mail</label>
-                  <input type="email" name="kontakt">
-                  <label>Virksomhed</label>
-                  <input type="email" name="kontakt">
-                  <label>Tlf.</label>
-                  <input type="text" name="kontakt">
-    
-                </fieldset>
-                      
-                  
-          </form>
-      </div>
     </div>
     
     <main>
@@ -140,6 +162,7 @@
                 </a>
               </div>
           </div>
+          <button href="#" class="estimering__open title--underline">Estimér dit projekt</button>
         </section>
         <section></section>
         <section class="about-us">
