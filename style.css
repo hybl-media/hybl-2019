@@ -303,7 +303,7 @@ header nav#menuPunkter.slideIn {
 
 /*=== FORSIDE ===*/
 
-.forside{
+#forside{
     height:100vh;
 }
 .forside-billede {
@@ -371,8 +371,9 @@ header nav#menuPunkter.slideIn {
 
 
 /*=== CASES ===*/
-.cases {
-    margin-top: 100px;
+
+#cases {
+    padding-top: 80px;
 }
 .cases__grid{
     display:flex;
@@ -483,8 +484,8 @@ header nav#menuPunkter.slideIn {
 
 /* ----> About Us <---- */
 
-.about-us {
-    padding-top: 100px;
+#about-us {
+    margin-top: 100px;
 }
 .about {
     padding-top: 25px;
