@@ -3,13 +3,35 @@
 $("#burgerMenu").click(function() {
     $(this).toggleClass("on");
     $("#menuPunkter").toggleClass("slideIn");
+    $("#overlay").toggleClass("overlayOn");
+    $("#burgerDivId").toggleClass("burgerDiv");
   });
     
-  $(".menuLinks").click(function() {
+  $(".toggle-menus, .vertical-text, #overlay").click(function() {
     $("#menuPunkter").toggleClass("slideIn");
     $("#burgerMenu").toggleClass("on");
+    $("#overlay").toggleClass("overlayOn");
+    $("#burgerDivId").toggleClass("burgerDiv");
   });
   
+  $("#burgerDivId").click(function() {
+    $(this).toggleClass("burgerDiv");
+    $("#menuPunkter").toggleClass("slideIn");
+    $("#burgerMenu").toggleClass("on");
+    $("#overlay").toggleClass("overlayOn");
+  });
+
+  $(document).ready(function () {
+    $(document).keydown(function(e){
+
+        if(e.keyCode == 27) {
+            $("#menuPunkter").toggleClass("slideIn");
+            $("#burgerMenu").toggleClass("on");
+            $("#overlay").toggleClass("overlayOn");
+            $("#burgerDivId").toggleClass("burgerDiv");
+        }
+    });
+})
   /* ---> Burgermenu bliver sort ved scroll <--- */
   
   $(document).ready(function(){

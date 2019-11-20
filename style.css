@@ -90,29 +90,58 @@ p.title--underline::after{
 
 #logo {
     position: absolute;
-    z-index: 100;
-
+    z-index: 20;
+    margin-top: 40px;
 }
 
 #logo img {
     width: 38px;
-    margin-top: 20px;
 }
 
 /* Selve menuen */
 
+.vertical-text {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    position: relative;
+    bottom: 230px;
+    margin-left: 20px;
+    font-size: 16px;
+    height: 100px;
+    cursor: pointer;
+}
+header nav ul div {
+    height: 0;
+}
+
+.overlayOn {
+    display: block;
+    position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 30;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
 #menuPunkter {
+    display: table;
     position: fixed;
     background-color: #f6f6f6;
     right: -80%;
     width: 80%;
     height: 100%;
-    z-index: 2;
+    z-index: 50;
     overflow-y: scroll;
-    transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
+    transition: all 0.5s cubic-bezier(.65,.05,.36,1);
 }
 
 /* Menu links */
@@ -120,7 +149,8 @@ p.title--underline::after{
 .menuLink1,
 .menuLink2,
 .menuLink3,
-.menuLink4 {
+.menuLink4,
+.menuLink5 {
     font-size: 30px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -130,59 +160,68 @@ p.title--underline::after{
     text-align: center;
 }
 
+header nav ul.menuLinks {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+
 .menuLinks li {
-    margin: 50px;
+    margin: 30px;
+    font-weight: bold;
 }
 
 .menuLink1 {
-    transition: all 0.6s;
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -o-transition: all 0.6s;
+    transition: all 0.5s cubic-bezier(.65,.05,.36,1);
     transform: matrix(1, 0, 0, 1, 500, 0);
     opacity: 0;
 }
 
 .menuLink2 {
-    transition: all 0.6s;
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -o-transition: all 0.6s;
+    transition: all 0.5s cubic-bezier(.65,.05,.36,1);
     transform: matrix(1, 0, 0, 1, 800, 0);
     opacity: 0;
 }
 
 .menuLink3 {
-    transition: all 0.6s;
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -o-transition: all 0.6s;
+    transition: all 0.5s cubic-bezier(.65,.05,.36,1);
     transform: matrix(1, 0, 0, 1, 1100, 0);
     opacity: 0;
 }
 
 .menuLink4 {
-    transition: all 0.6s;
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -o-transition: all 0.6s;
+    transition: all 0.5s cubic-bezier(.65,.05,.36,1);
     transform: matrix(1, 0, 0, 1, 1400, 0);
     opacity: 0;
 }
-
-.menuLinks li:first-child {
-    margin-top: 120px;
+.menuLink5 {
+    transition: all 0.5s cubic-bezier(.65,.05,.36,1);
+    transform: matrix(1, 0, 0, 1, 1700, 0);
+    opacity: 0;
 }
 
+
 /* Burgermenuen */
+#burgerDivId {
+    cursor: pointer;
+    z-index: 1;
+}
+.burgerDiv {
+    right: 0;
+    height: 100px;
+    width: 80%;
+    border-bottom: 1px solid rgba(0,0,0,.04);
+    position: fixed;
+}
 
 #burgerMenu {
     width: 28px;
     height: 30px;
-    top: 18px;
-    right: 7.15%;
+    margin-top: 40px;
+    padding-right: 7.15%;
+    right: 0;
     position: fixed;
-    z-index: 5;
+    z-index: 100;
 }
 
 #burgerMenu div {
@@ -232,14 +271,10 @@ p.title--underline::after{
 
 /* udseende af selve menuen når burgermenu bliver trykket på */
 
-.slideIn {
+header nav#menuPunkter.slideIn {
     right: 0 !IMPORTANT;
-    transition: all 0.3s ease-out;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    -o-transition: all 0.3s ease-out;
+    transition: all 0.6s cubic-bezier(.65,.05,.36,1);
 }
-
 #menuPunkter.slideIn .menuLink1 {
     transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
@@ -256,6 +291,10 @@ p.title--underline::after{
 }
 
 #menuPunkter.slideIn .menuLink4 {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+}
+#menuPunkter.slideIn .menuLink5 {
     transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
 }
@@ -279,6 +318,18 @@ p.title--underline::after{
     height: 100%;
     position:relative;
     z-index:1;
+}
+
+.forside-tekst div:first-child {
+    padding-top: 20px;
+
+}
+.p-forside {
+    animation-duration: 2s!IMPORTANT;
+    font-weight: 500;
+}
+.p-forside img {
+    margin-right: 100px;
 }
 
 .body-tekst {
@@ -320,6 +371,9 @@ p.title--underline::after{
 
 
 /*=== CASES ===*/
+.cases {
+    margin-top: 100px;
+}
 .cases__grid{
     display:flex;
     flex-wrap:wrap;
@@ -499,7 +553,7 @@ footer div img {
     margin: 5px 2px;
     width: 34px;
     height: 34px;
-    border: 2px solid rgb(1, 107, 104);
+    border: 3px solid rgb(1, 107, 104);
     font-size: 14px!IMPORTANT;
     transition: background-color 200ms ease 0ms;
 }
@@ -512,6 +566,7 @@ footer div img {
     content: "\f16d";
     position: relative;
     top: 10px;
+    font-weight: bold;;
 }
 .fa-linkedin:before {
     content: "\f16d";
@@ -568,6 +623,22 @@ footer div img {
         margin:50px;
         width:33.33%;
     }
+    #menuPunkter {
+        right: -35%;
+        width: 35%;
+        transition: all 0.5s cubic-bezier(.65,.05,.36,1);
+    }
+    #burgerMenu {
+        padding-right: 5.15%;
+    }
+    .page-center {
+        position: relative;
+        padding-right: 5.15%;
+        padding-left: 5.15%; 
+    }
+    .burgerDiv {
+        width: 35%;
+    }
 }
 @media only screen and (max-width: 860px) {
     .footer div:first-child {
@@ -585,6 +656,12 @@ footer div img {
     }
     .footer div {
         flex-basis: 45%;
+    }
+    
+}
+@media only screen and (max-width: 1260px) {
+    h1 {
+        font-size: 4rem;
     }
     
 }
