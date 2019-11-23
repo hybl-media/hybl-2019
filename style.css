@@ -803,11 +803,20 @@ header nav#menuPunkter.slideIn {
 }
 
 
+
 .about:first-child {
     background-color: #F2F2F2;
 }
 .about:last-child {
     background-color: #F2F2F2;
+}
+
+.about:first-child img {
+    order: -1;
+    
+}
+.about:last-child img{
+    order: -1;
 }
 .divider-skewed.grey {
     background: linear-gradient(to left bottom, white 49%, #f2f2f2 50%);
