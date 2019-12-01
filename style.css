@@ -987,9 +987,11 @@ footer div img {
 }
 
 .services-headline {
-    width: 100%;
     height: 100px;
-    padding: 20px;
+    padding: 40px;
+}
+.services-headline h2{
+    margin:0;
 }
 
 .placeholder-container {
