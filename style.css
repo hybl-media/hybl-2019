@@ -994,33 +994,116 @@ footer div img {
     margin:0;
 }
 
-.placeholder-container {
+.de-fire-services {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     justify-content: space-evenly;
 }
 
-.placeholder-1 {
-    background-color: red;
+.service-webshop {
     height: 200px;
     width: 200px;
 }
 
-.placeholder-2 {
-    background-color: yellow;
+.service-webshop img {
+    width: 100%;
+    display: block;
+}
+
+.service-webshop img:last-child {
+    display: none;
+}
+
+.service-webshop:hover img:last-child {
+    display: block;
+    animation: service-animation 2s infinite;
+}
+
+.service-webshop:hover img:first-child {
+    display: none;
+    animation: service-animation-reverse 2s infinite;
+}
+
+@keyframes service-animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes service-animation-reverse {
+    from {opacity: 1;}
+    to {opacity: 0; display: block;}
+}
+
+.service-film {
     height: 200px;
     width: 200px;
 }
 
-.placeholder-3 {
-    background-color: orange;
+.service-film img {
+    width: 100%;
+    display: block;
+}
+
+.service-film img:last-child {
+    display: none;
+}
+
+.service-film:hover img:last-child {
+    display: block;
+    animation: service-animation 5s infinite;
+}
+
+.service-film:hover img:first-child {
+    display: none;
+}
+
+.service-pen {
     height: 200px;
     width: 200px;
 }
 
-.placeholder-4 {
-    background-color: pink;
+.service-pen img {
+    width: 100%;
+    display: block;
+}
+
+.service-pen img:last-child {
+    display: none;
+}
+
+.service-pen:hover img:last-child {
+    display: block;
+    animation: service-animation 5s infinite;
+}
+
+.service-pen:hover img:first-child {
+    display: none;
+}
+
+.service-website {
     height: 200px;
     width: 200px;
+}
+
+.service-website img {
+    width: 100%;
+    display: block;
+}
+
+.service-website img:last-child {
+    display: none;
+}
+
+.service-website:hover img:last-child {
+    display: block;
+    animation: service-animation 5s infinite;
+}
+
+.service-website:hover img:first-child {
+    display: none;
+}
+
+.service-tekst {
+    text-align: center;
 }
