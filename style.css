@@ -456,6 +456,19 @@ button.estimering__open:hover{
     animation:fadeInArrowLeft 0.5s;
 }
 
+/* ESTIMERING ICONS */
+.estimering__icons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.estimering__icons img {
+    display: none;
+    height: 300px;
+    margin: 0 auto;
+}
+
 /* Menu links */
 
 .menuLink1,
@@ -773,6 +786,11 @@ header nav#menuPunkter.slideIn {
 .buchwald-color{
     background-color:#F07D00;
 }
+
+.bryllups-color {
+    background-color: #C78637;
+}
+
 .cases__image img{
     object-fit: cover;
     vertical-align:middle;
