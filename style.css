@@ -615,21 +615,13 @@ header nav#menuPunkter.slideIn {
 
 /*=== FORSIDE ===*/
 
-#forside{
-    height:100vh;
-}
 .forside-billede {
-    height:100%;
-    position:absolute;
     left:0;
     right:0;
 }
 .forside-tekst {
     background-color: white;
-    clip-path: polygon(0% 0%, 55% 0%, 0% 300%, 0% 0%);
-    height: 100%;
     position:relative;
-    z-index:1;
 }
 
 .forside-tekst div:first-child {
@@ -650,7 +642,6 @@ header nav#menuPunkter.slideIn {
 
 .forside-bg{
     width: 100%;
-    position: absolute;
     height: 100%;
     top: 0;
     overflow: hidden;
@@ -661,14 +652,11 @@ header nav#menuPunkter.slideIn {
     width: auto;
     height: 110%;
     object-fit: fill;
-    position: absolute;
     right: -125px;
     bottom: 0;
 }
 
 .tekst-boks {
-    width: 35%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -961,6 +949,28 @@ footer div img {
     .burgerDiv {
         width: 35%;
     }
+    .forside-tekst {
+        clip-path: polygon(0% 0%, 55% 0%, 0% 300%, 0% 0%);
+        z-index: 1;
+        height: 100%;
+    }
+    .forside-bg img{
+        position: absolute;
+    }
+    .forside-bg{
+        position: absolute;
+    }
+    .tekst-boks {
+        height: 100vh;
+        width: 35%;
+    }
+    .forside-billede {
+        position:absolute;
+        height: 100%;
+    }
+    #forside{
+        height:100vh;
+    }
 }
 @media only screen and (max-width: 860px) {
     .footer div:first-child {
@@ -978,9 +988,47 @@ footer div img {
     }
     .footer div {
         flex-basis: 45%;
-    }
-    
+    }  
 }
+@media only screen and (max-width: 768px) {
+.forside-bg img {
+    height: 300px!IMPORTANT;
+    }
+.forside-bg {
+    height: 70%;
+    }
+} 
+@media only screen and (max-width: 1080px) {
+
+    .bundtekst {
+        display: none;
+    }
+    .forside-billede {
+        display: flex;
+        flex-direction: column;
+    } 
+    #forside {
+        padding-top: 100px;
+    }
+    .tekst-boks {
+        padding-bottom: 50px;
+    }
+    .forside-bg {
+        padding-right: 5.15%;
+        padding-left: 5.15%; 
+        box-sizing: border-box;
+    }
+    .forside-bg img {
+        object-fit: cover;
+        right: -125px;
+        bottom: 0;
+        width: 100%;
+        object-position: bottom;
+        height: 500px;
+        }
+    }
+   
+
 @media only screen and (max-width: 1260px) {
     h1 {
         font-size: 4rem;
