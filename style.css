@@ -63,14 +63,25 @@ h3{
     content: url('img/underline01.png');
     position:relative;
     top:-20px;
+    transform:scale(0.3) scaleY(0.6);
 }
+/* Specific text styles */
 
 p.title--underline::after{
     content: url('img/underline01.png');
     position:relative;
-    top:10px
+    top:10px;
 }
-
+button.title--underline::after{
+    top:-10px;
+    transform:scale(0.3) scaleY(0.5) scaleX(0.7);
+}
+#cases h2.title--underline::after{
+    transform:scaleX(0.3) scaleY(0.15) scaleX(0.5);
+}
+#services h2.title--underline::after{
+    transform:scaleX(0.3) scaleY(0.15) scaleX(0.7);
+}
 
 /* ----> ALT CONTENT <---- */
 
@@ -228,10 +239,7 @@ button.estimering__open{
     background-color: transparent;
     outline:none;
 }
-button.title--underline::after{
-    transform: scaleY(0.5);
-    top:-6px;
-}
+
 button.estimering__open:hover{
     cursor:pointer;
 }
