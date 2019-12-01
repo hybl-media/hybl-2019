@@ -39,6 +39,32 @@ $(document).ready(function(){
         $("main").css("display","block");
 
     }
+
+// ICON HOVER EFFEKT TIL PRIS ESTIMERING
+
+$(".estimering__step-website").hover(function() 
+{iconShow("website")}, function() {iconsHide()});
+
+$(".estimering__step-cart").hover(function() 
+{iconShow("cart")}, function() {iconsHide()});
+
+$(".estimering__step-pen").hover(function() 
+{iconShow("pen")}, function() {iconsHide()});
+
+$(".estimering__step-film").hover(function() 
+{iconShow("film")}, function() {iconsHide()});
+
+function iconShow(icon) {
+    $(".estimering__icons img").hide();
+    $(".estimering__icon-" + icon).show();
+
+}
+
+function iconsHide(){
+    $(".estimering__icons img").hide();
+
+}
+
 })
 
     
