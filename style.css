@@ -235,16 +235,27 @@ header nav ul div {
 .estimering__open .estimering__exit{
     visibility:initial;
 }
-button.estimering__open{
+#cases button{
     margin: 100px auto 0 auto;
-    font-size: 18px;
+}
+button.estimering__open{
+    display:block;
     border: none;
-    background-color: transparent;
     outline:none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 12px 15px 13px;
+    background-color: rgb(1, 107, 104);
+    transition:0.1s;
 }
 
 button.estimering__open:hover{
     cursor:pointer;
+    transform:translateY(-3px)
 }
 
 
@@ -1089,6 +1100,7 @@ footer div img {
 }
 .service-tekst {
     text-align: center;
+    font-weight:600;
 }
 .services__icon-container img{
     width:200px;
@@ -1100,7 +1112,6 @@ footer div img {
     overflow:hidden;
     width:200px;
     height:200px;
-    transition:0.2s;
 }
 .services__block:hover img{
     animation-name: switcher;
@@ -1109,16 +1120,49 @@ footer div img {
     animation-fill-mode:forwards;
     animation-duration:0.2s;
 }
-.services__block:hover .services__icon-container{
-    transform:translateY(-3px) rotate(-1deg);
+.services__block.simulated-hover img{
+    animation-name: switcher;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+    animation-fill-mode:forwards;
+    animation-duration:0.2s;
 }
 
 @keyframes switcher {
     50%{
-      transform:translateY(0);
+        transform:translateY(0);
     }50.0001%{
-      transform:translateY(-200px);
+        transform:translateY(-200px);
     }100%{
-      transform:translateY(-200px)
+        transform:translateY(-200px)
     }
-  }
+}
+
+/*Services info */
+.services__info{
+    margin-top:100px;
+    height:100px;
+}
+.services__info .services__info--show{
+    display:block;
+    animation: fadeInInfo 0.5s forwards;
+}
+.services__info-text{
+    display:none;
+    width:50%;
+    margin:0 auto;
+    text-align:center;
+}
+#services button{
+    margin: 50px auto 0 auto;
+}
+@keyframes fadeInInfo {
+    0%{
+        transform:translateY(10px);
+        opacity:0;
+    }
+    100%{
+        transform:translateY(0);
+        opacity:1;
+    }
+}

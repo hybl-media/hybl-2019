@@ -40,30 +40,86 @@ $(document).ready(function(){
 
     }
 
-// ICON HOVER EFFEKT TIL PRIS ESTIMERING
+    // Services icon hover effekt
 
-$(".estimering__step-website").hover(function() 
-{iconShow("website")}, function() {iconsHide()});
+    $(".estimering__step-website").hover(function() 
+    {iconShow("website")}, function() {iconsHide()});
 
-$(".estimering__step-cart").hover(function() 
-{iconShow("cart")}, function() {iconsHide()});
+    $(".estimering__step-cart").hover(function() 
+    {iconShow("cart")}, function() {iconsHide()});
 
-$(".estimering__step-pen").hover(function() 
-{iconShow("pen")}, function() {iconsHide()});
+    $(".estimering__step-pen").hover(function() 
+    {iconShow("pen")}, function() {iconsHide()});
 
-$(".estimering__step-film").hover(function() 
-{iconShow("film")}, function() {iconsHide()});
+    $(".estimering__step-film").hover(function() 
+    {iconShow("film")}, function() {iconsHide()});
 
-function iconShow(icon) {
-    $(".estimering__icons img").hide();
-    $(".estimering__icon-" + icon).show();
+    function iconShow(icon) {
+        $(".estimering__icons img").hide();
+        $(".estimering__icon-" + icon).show();
 
-}
+    }
 
-function iconsHide(){
-    $(".estimering__icons img").hide();
+    function iconsHide(){
+        $(".estimering__icons img").hide();
 
-}
+    }
+
+    // Services info text
+
+    $(".services__webshop").hover(function(){
+        showInfo("webshop");
+        cycleInfo = false;
+    })
+    $(".services__film").hover(function(){
+        showInfo("film");
+        cycleInfo = false;
+    })
+    $(".services__illustration").hover(function(){
+        showInfo("illustration");
+        cycleInfo = false;
+    })
+    $(".services__webdesign").hover(function(){
+        showInfo("webdesign");
+        cycleInfo = false;
+    })
+
+    function showInfo(service){ // Hvis info tekst baseret på service
+        var infoText = $(".services__info-" + service);
+        var infoTextAll = $(".services__info-text");
+
+        infoTextAll.removeClass("services__info--show");
+        infoText.addClass("services__info--show");
+    }
+
+    var cycleInfo = true;
+
+    function startCycleLoop(){ // Loop igennem de forskellige services
+        var services = ["webshop", "film", "illustration", "webdesign"];
+        var current = 0;
+
+        setInterval(function cycle(){
+            if(cycleInfo){ // Kør kun loop hvis brugeren ikke har interageret
+                console.log("cycle to:" + services[current]);
+
+                showInfo(services[current]);
+                $(".services__block").removeClass("simulated-hover");
+                $(".services__" + services[current]).addClass("simulated-hover");
+
+                if(current != 3){
+                    current++
+                }else{
+                    current = 0;
+                }
+            }
+            return cycle;
+        }(), 4000)
+    }
+
+    $(".services__block").hover(function(){ // Fjern simuleret hover effekt hvis brugeren selv interagerer
+        $(".services__block").removeClass("simulated-hover");
+    })
+    startCycleLoop();
 
 })
 
