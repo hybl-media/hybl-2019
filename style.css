@@ -658,6 +658,7 @@ header nav#menuPunkter.slideIn {
 .p-forside {
     animation-duration: 2s!IMPORTANT;
     font-weight: 500;
+    font-size: 30px;
 }
 .p-forside img {
     margin-right: 100px;
