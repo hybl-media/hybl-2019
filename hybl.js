@@ -121,6 +121,32 @@ $(document).ready(function(){
     })
     startCycleLoop();
 
+
+    //CASES
+    var currentCase;
+
+    $(".cases__item-container").click(function(){
+        currentCase = $(this).attr("data-id");
+        console.log(currentCase);
+        openCase(currentCase);
+    });
+    $(".case__exit").click(function(){
+        closeCase(currentCase);
+    });
+
+    function closeCase(currentCase){
+        $(".case[data-id='" + currentCase + "']").removeClass("case__opening");
+        $(".case[data-id='" + currentCase + "']").addClass("case__closing");
+        currentCase = "";
+        $("main").css("display","block");
+        window.scrollTo(0,0);
+    }
+    function openCase(currentCase){
+        $("main").css("display","none");
+        $(".case[data-id='" + currentCase + "']").removeClass("case__closing");
+        $(".case[data-id='" + currentCase + "']").addClass("case__opening");
+        window.scrollTo(0,0);
+    }
 })
 
     
