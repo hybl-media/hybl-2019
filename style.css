@@ -878,6 +878,13 @@ header nav#menuPunkter.slideIn {
 .case__section_info{
     padding:20px;
 }
+.case__section_gif{
+    padding: 20px;
+    margin-top: 20px;
+}
+.case__section_gif img{
+    width: 60%;
+}
 .case__section_info h3{
     font-size:1.75em;
     margin:0;
@@ -954,6 +961,9 @@ header nav#menuPunkter.slideIn {
     .case__section_info{
         width: 60%;
     } 
+    .case__section_gif{
+        width: 50%;
+    }
     .case__video{
         padding:125px 20px;
     }
