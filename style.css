@@ -152,7 +152,7 @@ header nav ul div {
     background-color: #f6f6f6;
     right: -80%;
     width: 80%;
-    height: 100%;
+    height: 100vh;
     z-index: 50;
     overflow-y: scroll;
     transition: all 0.5s cubic-bezier(.65,.05,.36,1);
@@ -678,7 +678,7 @@ header nav#menuPunkter.slideIn {
 }
 .forside-bg img{
     width: auto;
-    height: 110%;
+    height: 115%;
     object-fit: fill;
     right: -125px;
     bottom: 0;
@@ -989,6 +989,7 @@ footer div img {
     }
     .forside-tekst {
         clip-path: polygon(0% 0%, 55% 0%, 0% 300%, 0% 0%);
+        -webkit-clip-path: polygon(0% 0%, 55% 0%, 0% 300%, 0% 0%);
         z-index: 1;
         height: 100%;
     }
