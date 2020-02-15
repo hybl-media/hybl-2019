@@ -34,10 +34,10 @@
           <div class="estimering__intro">
               <h1>Lad os estimere <span class="grøntekst"><br>dit projekt.</span></h1>
               <p>Lad os starte en dialog om dit projekt.</p>
-              <p>Du kan også ringe eller skrive til os på hello@hybl.dk  / +45 51 89 98 43</p>
+              <p>Du kan også skrive til os på <a href="mailto:hello@hybl.dk">hello@hybl.dk</a> eller ringe på <a href="tel:+45 51 89 98 43">51 89 98 43</a></p>
             </div>
             <div class="estimering__formular">
-                <form action="mail.php" method="POST">
+                <form id="estimering__submit">
                   <div class="estimering__step estimering__step--1 estimering__step--show">
                     <div class="estimering__step--header">
                         <span>1/3</span>
@@ -92,10 +92,16 @@
                         <input type="text" name="phone">
                         <div class="estimering__controls">
                             <a href="#" class="estimering__step--back">Tilbage</a>
-                            <input type="submit" value="Bekræft">
+                            <input class="estimering__step--confirm" value="Bekræft">
                           </div>
                       </div>
-                    </div>              
+                  </div>
+                  <div class="estimering__step estimering__step--4 estimering__step--notification estimering__step--hidden" data="stepid-4">
+                    <div class="estimering__step--header">  
+                      <h2>Du hører fra os snarest</h2>
+                    </div>
+                    <p>Mange tak for din henvendelse <span></span> vi ser frem til at snakke med dig.</p>
+                </div>               
                 </form>
             </div>
       </div>

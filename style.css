@@ -9,7 +9,7 @@ main{
 
 a {
     text-decoration: none;
-    color: black;
+    color: #016b68;
 }
 
 a:hover {
@@ -258,7 +258,32 @@ button.estimering__open:hover{
     transform:translateY(-3px)
 }
 
-
+@media screen and (max-width: 769px) {
+    .estimering__container{
+        overflow:scroll !important;
+    }
+    .estimering__inner{
+        flex-direction:column;
+    }
+    .estimering__inner .estimering__intro, .estimering__inner .estimering__formular{
+        width:100%;
+        height:auto;
+    }
+    .estimering__inner .estimering__formular{
+        height:100%;
+        padding-bottom:75px;
+    }
+    .estimering__intro h1{
+        font-size:2rem;
+    }
+}
+.estimering__step--confirm{
+    color:#016b68;
+    font-weight:600;
+}
+.estimering__step--confirm:hover{
+    cursor:pointer;
+}
 .estimering__container{
     overflow:hidden;
     position:fixed;
@@ -306,6 +331,13 @@ button.estimering__open:hover{
     background-color:#FFFFFF;
     padding: 75px 50px;
     box-sizing:border-box;
+}
+.estimering__intro h1{
+    margin-bottom:20px;
+}
+.estimering__intro p{
+    font-size:20px;
+    margin-bottom:15px;
 }
 .estimering__formular{
     height:100%;
@@ -481,6 +513,7 @@ button.estimering__open:hover{
     display: none;
     height: 300px;
     margin: 0 auto;
+    animation:fadeIn 0.5s;
 }
 
 /* Menu links */

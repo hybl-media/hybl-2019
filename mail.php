@@ -12,5 +12,4 @@ $recipient = "alexander@menzel.dk";
 $subject = "hybl.dk prisestimat";
 $mailheader = "Fra: $email \r\n";
 mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-echo "Du hører fra os meget snart!";
 ?>
