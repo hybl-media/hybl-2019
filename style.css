@@ -926,6 +926,12 @@ header nav#menuPunkter.slideIn {
     height:auto;
     transform: scale(1.02);
 }
+
+.case__section--detaljer {
+    display: flex;
+    flex-direction: row;
+}
+
 @media only screen and (min-width: 768px) {
     .case__section{
         flex-direction:row;
