@@ -252,6 +252,9 @@ button.estimering__open{
     background-color: rgb(1, 107, 104);
     transition:0.1s;
 }
+#menuPunkter .estimering__open{
+    margin: 0 auto;
+}
 
 button.estimering__open:hover{
     cursor:pointer;
@@ -571,6 +574,11 @@ header nav ul.menuLinks {
     transform: matrix(1, 0, 0, 1, 1700, 0);
     opacity: 0;
 }
+.menuLink6 {
+    transition: all 0.5s cubic-bezier(.65,.05,.36,1);
+    transform: matrix(1, 0, 0, 1, 2000, 0);
+    opacity: 0;
+}
 
 
 /* Burgermenuen */
@@ -667,6 +675,10 @@ header nav#menuPunkter.slideIn {
     opacity: 1;
 }
 #menuPunkter.slideIn .menuLink5 {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+}
+#menuPunkter.slideIn .menuLink6 {
     transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
 }

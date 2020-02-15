@@ -63,13 +63,15 @@
                         <h2>Beskriv projektet så godt du kan</h2>
                       </div>
                       <div class="estimering__step--input">
-                        <label>Indtast prisspænd i kr.</label>
+                        <label>Indtast dit budget</label>
                         <div class="estimering__prisspænd">
-                            <input type="text" name="pris-min" value="" placeholder="kr.">
+                            <input type="text" name="pris-min" value="" placeholder="Fra pris">
                             <span> - </span>
-                            <input type="text" name="pris-max" value="" placeholder="kr.">
+                            <input type="text" name="pris-max" value="" placeholder="Til pris">
                         </div>
-                        <textarea name="besked" rows="6" cols="25"></textarea>
+                        <label>Fortæl os en smule om dit projekt</label>
+                        <textarea required data-desc="projektbeskrivelse" name="besked" rows="6" cols="25"></textarea>
+                        <div class="estimering__notification"></div>
                         <div class="estimering__controls">
                             <a href="#" class="estimering__step--back">Tilbage</a>
                             <a href="#" class="estimering__step--next">Næste</a>
@@ -83,16 +85,17 @@
                       </div>
                       <div class="estimering__step--input">
                         <label>Navn</label>
-                        <input type="text" name="name">
+                        <input required data-desc="navn" type="text" name="name">
                         <label>E-mail</label>
-                        <input type="email" name="email">
+                        <input required data-desc="email" type="email" name="email">
                         <label>Virksomhed</label>
                         <input type="text" name="business">
                         <label>Tlf.</label>
                         <input type="text" name="phone">
+                        <div class="estimering__notification"></div>
                         <div class="estimering__controls">
                             <a href="#" class="estimering__step--back">Tilbage</a>
-                            <input class="estimering__step--confirm" value="Bekræft">
+                            <a href="#estimering-sendt" class="estimering__step--confirm" data-value="Bekræft">Bekræft</a>
                           </div>
                       </div>
                   </div>
@@ -210,6 +213,7 @@
                     <li class="menuLink3"><a class="toggle-menus" href="#about-us"> Hvorfor os? </a></li>
                     <li class="menuLink4"><a class="toggle-menus" href="#services"> Services </a></li>
                     <li class="menuLink5"><a class="toggle-menus" href="#kontaktinfo"> Kontakt </a></li>
+                    <li class="menuLink6"><button href="#" class="estimering__open toggle-menus">Estimér dit projekt</button></li>
                     <div> <p class="vertical-text grøntekst">Hybl Media</p> </div>
                 </ul>
             </nav>
