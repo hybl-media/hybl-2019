@@ -884,11 +884,12 @@ header nav#menuPunkter.slideIn {
     padding:20px;
 }
 .case__section_gif{
-    padding: 20px;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .case__section_gif img{
-    width: 60%;
+    width: 100%;
 }
 .case__section_info h3{
     font-size:1.75em;
