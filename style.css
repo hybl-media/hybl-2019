@@ -832,12 +832,14 @@ header nav#menuPunkter.slideIn {
     top: 32px;
     width: 32px;
     height: 32px;
-    opacity: 0.5;
-    z-index:101;
+    z-index: 101;
+    background-color: white;
+    border-radius: 50%;
+    padding: 3px;
 }
 .case__exit:before, .case__exit:after {
     position: absolute;
-    left: 15px;
+    left: 18px;
     content: ' ';
     height: 33px;
     width: 2px;
@@ -855,7 +857,7 @@ header nav#menuPunkter.slideIn {
 }
 .case__featured-image img{
     width:100%;
-    filter:brightness(0.8);
+    
 }
 .case__info{
     padding:20px;
@@ -931,6 +933,54 @@ header nav#menuPunkter.slideIn {
     display: flex;
     flex-direction: row;
 }
+.featured-hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("img/cases/buchwald_cover.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: 75% 25%;
+}
+.featured-hero-image1 {
+    background-image: url("img/cases/bryllupsbartender_cover.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: 75% 25%;
+}
+
+.featured-hero-text {
+    color: white;
+    top: 40%;
+    left: 10%;
+    position: absolute;
+    width: 45%;
+    font-size: 1.2em;
+}
+.featured-hero-text1 {
+    color: black;
+    top: 40%;
+    left: 10%;
+    position: absolute;
+    width: 45%;
+    font-size: 1.2em;
+}
+.featured-hero-text p, .featured-hero-text1 p {
+    margin-top: 25px;
+}
+.case__link {
+    color: white!IMPORTANT;
+}
+.case__landing{
+    height:100vh;
+}
+.featured-hero-title {
+    margin: 0 auto;
+
+}
 
 @media only screen and (min-width: 768px) {
     .case__section{
@@ -942,19 +992,23 @@ header nav#menuPunkter.slideIn {
         margin-top:100px;
     }
     .case__section h3{
-        font-size:2.75em;
+        font-size:2em;
     }
     .case__section p{
-        font-size:20px;
+        font-size:18px;
     }
     .case__section a{
-        font-size:20px;
+        font-size:18px;
+    }
+    .featured-hero-text p {
+        font-size: 18px;
+    }
+    .featured-hero-text, .featured-hero-text1 {
+        font-size: 1.5em;
+        top: 45%;
     }
     .case__section.case__landing{
         padding: 0;
-    }
-    .case__landing{
-        height:100vh;
     }
     .case__featured-image img{
         width: 100%;
@@ -970,11 +1024,13 @@ header nav#menuPunkter.slideIn {
     .case__section_info{
         display: flex;
         flex-direction: column;
-        padding: 0 150px 0 50px;
+        padding-right: 100px;
+        padding-left: 10%;
         justify-content: center;
     }
     .case__section_image{
         width: 40%;
+        padding-right: 5%;
     }  
     .case__section_info{
         width: 60%;
@@ -985,7 +1041,12 @@ header nav#menuPunkter.slideIn {
     .case__video{
         padding:125px 20px;
     }
+
 }
+
+    
+    
+
 
 /* ----> About Us <---- */
 
@@ -1241,6 +1302,7 @@ footer div img {
     }
     
 }
+
 /*=== SERVICES ===*/
 
 #services{
