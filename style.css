@@ -759,19 +759,19 @@ header nav#menuPunkter.slideIn {
     margin:25px;
     width:100%;
 }
-.cases__item-cta{
-    align-self:flex-end;
-}
+
 .cases__item-container{
     box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+}
+.cases__item-container:hover {
+    cursor: pointer;
 }
 .cases__item-container:hover .cases__item-info--container{
     transform:translateY(-10px);
     opacity:1;
 }
 .cases__item-container:hover .cases__image img{
-    transform:scale(1.01);
-    filter: blur(3px);
+    transform:scale(1.1);
 }
 .cases__item-container:hover .cases__image-fill{
     opacity:0.3;
@@ -817,7 +817,6 @@ header nav#menuPunkter.slideIn {
     height:100%;
     box-sizing: border-box;
     display: flex;
-    justify-content:space-between;
     flex-direction: column;
     opacity:0;
     transform:translateY(10px);
@@ -826,7 +825,7 @@ header nav#menuPunkter.slideIn {
 .cases__item-info--background{
     position: absolute;
     z-index: 1;
-    width: 100%;
+    width: 101%;
     top: 0;
     height: 150%;
     transform: skew(0deg);
@@ -848,19 +847,12 @@ header nav#menuPunkter.slideIn {
     transition:0.3s ease-out;
     opacity:0;
 }
-.buchwald-color{
-    background-color:#F07D00;
-}
 
-.bryllups-color {
-    background-color: #C78637;
-}
 
 .cases__image img{
     object-fit: cover;
     vertical-align:middle;
     width: 100%;
-    filter: blur(0);
     transform:scale(1.02);
     transition:0.4s ease-out;
 }
@@ -898,7 +890,7 @@ header nav#menuPunkter.slideIn {
 }
 .case__container{
     display:none;
-    padding-bottom:200px;
+    padding-bottom:100px;
 }
 .case__featured-image img{
     width:100%;
@@ -928,12 +920,16 @@ header nav#menuPunkter.slideIn {
     flex-direction:column;
 }
 .case__section_info{
-    padding:20px;
+    padding-left:10%;
+    padding-right:10%;
+    padding-bottom: 50px;
+    
 }
 .case__section_gif{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 7%;
 }
 .case__section_gif img{
     width: 100%;
@@ -978,6 +974,7 @@ header nav#menuPunkter.slideIn {
 .case__section--detaljer {
     display: flex;
     flex-direction: row;
+    padding-top: 50px;
 }
 .featured-hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("img/cases/buchwald_cover.png");
@@ -1003,7 +1000,7 @@ header nav#menuPunkter.slideIn {
     top: 40%;
     left: 10%;
     position: absolute;
-    width: 45%;
+    width: 80%;
     font-size: 1.2em;
 }
 .featured-hero-text1 {
@@ -1011,7 +1008,7 @@ header nav#menuPunkter.slideIn {
     top: 40%;
     left: 10%;
     position: absolute;
-    width: 45%;
+    width: 80%;
     font-size: 1.2em;
 }
 .featured-hero-text p, .featured-hero-text1 p {
@@ -1052,6 +1049,7 @@ header nav#menuPunkter.slideIn {
     .featured-hero-text, .featured-hero-text1 {
         font-size: 1.5em;
         top: 45%;
+        width: 45%;
     }
     .case__section.case__landing{
         padding: 0;
@@ -1070,7 +1068,6 @@ header nav#menuPunkter.slideIn {
     .case__section_info{
         display: flex;
         flex-direction: column;
-        padding-right: 100px;
         padding-left: 10%;
         justify-content: center;
     }
@@ -1327,8 +1324,6 @@ footer div img {
         padding-bottom: 50px;
     }
     .forside-bg {
-        padding-right: 5.15%;
-        padding-left: 5.15%; 
         box-sizing: border-box;
     }
     .forside-bg img {
