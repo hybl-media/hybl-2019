@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135076552-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-135076552-1');
+    </script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>hybl.dk</title>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T8LGFGJ');</script>
+  <!-- End Google Tag Manager -->
 
 
     <!-- DEPENDENCIES -->
@@ -27,6 +45,11 @@
 
   <body>
 
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8LGFGJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
     <!-- ESTIMERING -->
     <div class="estimering__container estimering__init">
       <a href="#" class="estimering__exit"></a>
@@ -34,10 +57,10 @@
           <div class="estimering__intro">
               <h1>Lad os estimere <span class="grøntekst"><br>dit projekt.</span></h1>
               <p>Lad os starte en dialog om dit projekt.</p>
-              <p>Du kan også ringe eller skrive til os på hello@hybl.dk  / +45 51 89 98 43</p>
+              <p>Du kan også skrive til os på <a href="mailto:hello@hybl.dk">hello@hybl.dk</a> eller ringe på <a href="tel:+45 51 89 98 43">51 89 98 43</a></p>
             </div>
             <div class="estimering__formular">
-                <form action="mail.php" method="POST">
+                <form id="estimering__submit">
                   <div class="estimering__step estimering__step--1 estimering__step--show">
                     <div class="estimering__step--header">
                         <span>1/3</span>
@@ -63,13 +86,15 @@
                         <h2>Beskriv projektet så godt du kan</h2>
                       </div>
                       <div class="estimering__step--input">
-                        <label>Indtast prisspænd i kr.</label>
+                        <label>Indtast dit budget</label>
                         <div class="estimering__prisspænd">
-                            <input type="text" name="pris-min" value="" placeholder="kr.">
+                            <input type="text" name="pris-min" value="" placeholder="Fra pris">
                             <span> - </span>
-                            <input type="text" name="pris-max" value="" placeholder="kr.">
+                            <input type="text" name="pris-max" value="" placeholder="Til pris">
                         </div>
-                        <textarea name="besked" rows="6" cols="25"></textarea>
+                        <label>Fortæl os en smule om dit projekt</label>
+                        <textarea required data-desc="projektbeskrivelse" name="besked" rows="6" cols="25"></textarea>
+                        <div class="estimering__notification"></div>
                         <div class="estimering__controls">
                             <a href="#" class="estimering__step--back">Tilbage</a>
                             <a href="#" class="estimering__step--next">Næste</a>
@@ -83,19 +108,26 @@
                       </div>
                       <div class="estimering__step--input">
                         <label>Navn</label>
-                        <input type="text" name="name">
+                        <input required data-desc="navn" type="text" name="name">
                         <label>E-mail</label>
-                        <input type="email" name="email">
+                        <input required data-desc="email" type="email" name="email">
                         <label>Virksomhed</label>
                         <input type="text" name="business">
                         <label>Tlf.</label>
                         <input type="text" name="phone">
+                        <div class="estimering__notification"></div>
                         <div class="estimering__controls">
                             <a href="#" class="estimering__step--back">Tilbage</a>
-                            <input type="submit" value="Bekræft">
+                            <a href="#estimering-sendt" class="estimering__step--confirm" data-value="Bekræft">Bekræft</a>
                           </div>
                       </div>
-                    </div>              
+                  </div>
+                  <div class="estimering__step estimering__step--4 estimering__step--notification estimering__step--hidden" data="stepid-4">
+                    <div class="estimering__step--header">  
+                      <h2>Du hører fra os snarest</h2>
+                    </div>
+                    <p>Mange tak for din henvendelse <span></span> vi ser frem til at snakke med dig.</p>
+                </div>               
                 </form>
             </div>
       </div>
@@ -107,16 +139,15 @@
     <!-- CASE: BUCHWALD -->
     <div class="case case__container" data-id="buchwald">
       <a href="#" class="case__exit"></a>
-      <div class="case__section case__landing">
-        <div class="case__info">
-          <h2 class="case__title">Buchwald's kafferisteri</h2>
+      <div class="case__landing">
+      <div class="featured-hero-image">
+        <div class="featured-hero-text">
+          <h2 class="featured-hero-title">Buchwald's kafferisteri</h2>
           <a class="case__link" href="https://buchwalds.dk">buchwalds.dk</a>
-          <p class="case__description">Buchwalds kafferisteri er et microristeri på Bornholm. Vi fik til opgave at lave en webshop til risteriet, som ikke kun fremviste kaffeposer, men samtidig gav indblik i processen bag kafferistning.</p>
-        </div>
-        <div class="case__featured-image">
-          <img src="img/cases/case__buchwalds__featured-image.png" alt=""/>
+          <p>Buchwalds kafferisteri er et microristeri på Bornholm. Vi fik til opgave at lave en webshop til risteriet, som ikke kun fremviste kaffeposer, men samtidig gav indblik i processen bag kafferistning.</p>
         </div>
       </div>
+    </div>
       <div class="case__section case__section--grey">
         <div class="case__section_info">
           <h3>Responsiv webshop i wordpress</h3>
@@ -148,7 +179,16 @@
     <!-- CASE: BRYLLUPSBARTENDER -->
     <div class="case case__container" data-id="bryllupsbartender">
       <a href="#" class="case__exit"></a>
-      <div class="case__section case__landing">
+      <div class="case__landing">
+        <div class="featured-hero-image1">
+          <div class="featured-hero-text1">
+            <h2 class="featured-hero-title">Bryllupsbartender</h2>
+            <a class="case__link1" href="https://bryllupsbartender.dk">bryllupsbartender.dk</a>
+            <p>Af Bryllupsbartender fik vi til opgave at designe en lys og let hjemmeside. Derudover skulle man som kunde kunne designe sin helt egen bar til sit bryllup, polterabend eller vielse.</p>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="case__section case__landing">
         <div class="case__info">
           <h2 class="case__title">Bryllupsbartender</h2>
           <a class="case__link" href="https://bryllupsbartender.dk">bryllupsbartender.dk</a>
@@ -158,6 +198,7 @@
           <img src="img/bryllups_bar.png" alt=""/>
         </div>
       </div>
+    -->
       <div class="case__section case__section--grey">
         <div class="case__section_info">
           <h3>Kontaktformular i Wordpress</h3>
@@ -195,6 +236,7 @@
                     <li class="menuLink3"><a class="toggle-menus" href="#about-us"> Hvorfor os? </a></li>
                     <li class="menuLink4"><a class="toggle-menus" href="#services"> Services </a></li>
                     <li class="menuLink5"><a class="toggle-menus" href="#kontaktinfo"> Kontakt </a></li>
+                    <li class="menuLink6"><button href="#" class="estimering__open toggle-menus">Estimér dit projekt</button></li>
                     <div> <p class="vertical-text grøntekst">Hybl Media</p> </div>
                 </ul>
             </nav>
@@ -235,8 +277,7 @@
                 <div class="cases__item-info">
                   <div class="cases__item-info--container">
                     <h3 class="cases__item-title">Buchwalds Kafferisteri</h3>
-                    <p>I dette projekt har vi designet og implementeret en webshop til Buchwalds kafferisteri, som er et mikroristeri på Bornholm.</p>
-                    <span class="cases__item-cta">Læs mere</span>
+                    <p>I dette projekt har vi designet og implementeret en webshop til Buchwalds kafferisteri.</p>
                   </div>
                   <div class="cases__item-info--background"></div>
                 </div>
@@ -253,9 +294,8 @@
                     <div class="cases__item-info--container">
                       <div>
                       <h3 class="cases__item-title">Bryllupsbartender</h3>
-                      <p>Bryllupsbartender havde brug for en ny hjemmeside til deres bryllupsservice, det indebar blandt andet at lave en formular så kunder kunne designe deres egen bryllupsbar.</p>
+                      <p> En lys og elegant hjemmeside til Bryllupsbartender. </p>
                       </div>
-                      <span class="cases__item-cta">Læs mere</span>
                     </div>
                     <div class="cases__item-info--background"></div>
                   </div>

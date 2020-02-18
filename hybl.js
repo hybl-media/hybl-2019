@@ -30,6 +30,9 @@ $(document).ready(function(){
     checkWidth();
     // Bind event listener
     $(window).resize(checkWidth);
+    // Estimer projekt
+
+    const animationTime = 700 // miliseconds for open and close 
 
     var currentStep = 1;
     $(".estimering__open").click(function(){
@@ -45,9 +48,30 @@ $(document).ready(function(){
         previousStep();
     });
 
+    function openEstimater(){
+        currentStep = 1;
+        $(".estimering__container").removeClass("estimering__init")
+        $(".estimering__container").removeClass("estimering__close").addClass("estimering__open");
+        $(".estimering__container").css("display","flex");
+        setTimeout(function(){
+            $("main").css("display","none");
+        },animationTime)
+    }
+    function closeEstimater(){
+        $(".estimering__container").removeClass("estimering__open").addClass("estimering__close");
+        currentStep = 1;
+        $("main").css("display","block");
+        setTimeout(function(){
+            $(".estimering__container").css("display","none");
+        },animationTime)
+    }
+
     function nextStep(){
-        currentStep++
-        goToStep(currentStep);
+        var emptyFields = checkStepValidation(currentStep)
+        if (emptyFields.length == 0){
+            currentStep++
+            goToStep(currentStep);
+        }
     }
     function previousStep(){
         currentStep--
@@ -57,20 +81,50 @@ $(document).ready(function(){
         $(".estimering__step").removeClass("estimering__step--show").addClass("estimering__step--hidden");
         $(".estimering__step--" + stepId).removeClass("estimering__step--hidden").addClass("estimering__step--show");
     }
-    function openEstimater(){
-        currentStep = 1;
-        $(".estimering__container").removeClass("estimering__init")
-        $(".estimering__container").removeClass("estimering__close").addClass("estimering__open");
-        setTimeout(function(){
-            $("main").css("display","none");
-        },700)
-    }
-    function closeEstimater(){
-        $(".estimering__container").removeClass("estimering__open").addClass("estimering__close");
-        currentStep = 1;
-        $("main").css("display","block");
+    // Form validation
 
+    function checkStepValidation(stepId){
+        var inputs = $(".estimering__step--" + stepId + " input:required, .estimering__step--" + stepId + " textarea:required");
+        var emptyFields = []
+        inputs.each(function(input){
+            if(!$(this).val()){
+                emptyFields.push($(this).data("desc"));
+            }
+        });
+        if (emptyFields.length > 0){
+            var emptyMessage = " "
+            $.each(emptyFields, function(index, value){
+                if(index == 0){
+                    emptyMessage = emptyMessage + value;
+                }else if(index == (emptyFields.length - 1)){
+                    emptyMessage = emptyMessage + " og " + value;
+                }else{
+                    emptyMessage = emptyMessage + ", " + value;
+                }
+            })
+            $('.estimering__step--' + stepId + ' .estimering__notification').html("Du mangler at udfylde" + emptyMessage);
+            $('.estimering__step--' + stepId + ' .estimering__notification').show()
+        }else{
+            $('.estimering__step--' + stepId + ' .estimering__notification').hide()
+        }
+
+        return emptyFields
     }
+
+    $('.estimering__step--confirm').click(function() { // When estimation is confirmed and sent to us
+        var emptyFields = checkStepValidation(currentStep)
+        if (emptyFields.length == 0){
+            var post_data = $('#estimering__submit').serialize();
+            $.post('mail.php', post_data, function(data) {
+                var username = $('.estimering__step--input input[name="name"]').val();
+                console.log("username")
+                $('.estimering__step--notification span').html(username);
+                console.log("Form submitted");
+                nextStep();
+            });
+        }
+
+      });
 
     // Services icon hover effekt
 
@@ -132,7 +186,6 @@ $(document).ready(function(){
 
         setInterval(function cycle(){
             if(cycleInfo){ // Kør kun loop hvis brugeren ikke har interageret
-                console.log("cycle to:" + services[current]);
 
                 showInfo(services[current]);
                 $(".services__block").removeClass("simulated-hover");
@@ -162,7 +215,6 @@ $(document).ready(function(){
 
     $(".cases__item-container").click(function(){
         currentCase = $(this).attr("data-id");
-        console.log(currentCase);
         openCase(currentCase);
     });
     $(".case__exit").click(function(){

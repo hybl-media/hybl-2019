@@ -9,7 +9,7 @@ main{
 
 a {
     text-decoration: none;
-    color: black;
+    color: #016b68;
 }
 
 a:hover {
@@ -252,13 +252,41 @@ button.estimering__open{
     background-color: rgb(1, 107, 104);
     transition:0.1s;
 }
+#menuPunkter .estimering__open{
+    margin: 0 auto;
+}
 
 button.estimering__open:hover{
     cursor:pointer;
     transform:translateY(-3px)
 }
 
-
+@media screen and (max-width: 769px) {
+    .estimering__container{
+        overflow:scroll !important;
+    }
+    .estimering__inner{
+        flex-direction:column;
+    }
+    .estimering__inner .estimering__intro, .estimering__inner .estimering__formular{
+        width:100%;
+        height:auto;
+    }
+    .estimering__inner .estimering__formular{
+        height:100%;
+        padding-bottom:75px;
+    }
+    .estimering__intro h1{
+        font-size:2rem;
+    }
+}
+.estimering__step--confirm{
+    color:#016b68;
+    font-weight:600;
+}
+.estimering__step--confirm:hover{
+    cursor:pointer;
+}
 .estimering__container{
     overflow:hidden;
     position:fixed;
@@ -306,6 +334,13 @@ button.estimering__open:hover{
     background-color:#FFFFFF;
     padding: 75px 50px;
     box-sizing:border-box;
+}
+.estimering__intro h1{
+    margin-bottom:20px;
+}
+.estimering__intro p{
+    font-size:20px;
+    margin-bottom:15px;
 }
 .estimering__formular{
     height:100%;
@@ -481,6 +516,7 @@ button.estimering__open:hover{
     display: none;
     height: 300px;
     margin: 0 auto;
+    animation:fadeIn 0.5s;
 }
 
 /* Menu links */
@@ -536,6 +572,11 @@ header nav ul.menuLinks {
 .menuLink5 {
     transition: all 0.5s cubic-bezier(.65,.05,.36,1);
     transform: matrix(1, 0, 0, 1, 1700, 0);
+    opacity: 0;
+}
+.menuLink6 {
+    transition: all 0.5s cubic-bezier(.65,.05,.36,1);
+    transform: matrix(1, 0, 0, 1, 2000, 0);
     opacity: 0;
 }
 
@@ -637,6 +678,10 @@ header nav#menuPunkter.slideIn {
     transform: matrix(1, 0, 0, 1, 0, 0);
     opacity: 1;
 }
+#menuPunkter.slideIn .menuLink6 {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    opacity: 1;
+}
 
 
 
@@ -714,19 +759,19 @@ header nav#menuPunkter.slideIn {
     margin:25px;
     width:100%;
 }
-.cases__item-cta{
-    align-self:flex-end;
-}
+
 .cases__item-container{
     box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+}
+.cases__item-container:hover {
+    cursor: pointer;
 }
 .cases__item-container:hover .cases__item-info--container{
     transform:translateY(-10px);
     opacity:1;
 }
 .cases__item-container:hover .cases__image img{
-    transform:scale(1.01);
-    filter: blur(3px);
+    transform:scale(1.1);
 }
 .cases__item-container:hover .cases__image-fill{
     opacity:0.3;
@@ -772,7 +817,6 @@ header nav#menuPunkter.slideIn {
     height:100%;
     box-sizing: border-box;
     display: flex;
-    justify-content:space-between;
     flex-direction: column;
     opacity:0;
     transform:translateY(10px);
@@ -781,7 +825,7 @@ header nav#menuPunkter.slideIn {
 .cases__item-info--background{
     position: absolute;
     z-index: 1;
-    width: 100%;
+    width: 101%;
     top: 0;
     height: 150%;
     transform: skew(0deg);
@@ -803,19 +847,12 @@ header nav#menuPunkter.slideIn {
     transition:0.3s ease-out;
     opacity:0;
 }
-.buchwald-color{
-    background-color:#F07D00;
-}
 
-.bryllups-color {
-    background-color: #C78637;
-}
 
 .cases__image img{
     object-fit: cover;
     vertical-align:middle;
     width: 100%;
-    filter: blur(0);
     transform:scale(1.02);
     transition:0.4s ease-out;
 }
@@ -832,12 +869,14 @@ header nav#menuPunkter.slideIn {
     top: 32px;
     width: 32px;
     height: 32px;
-    opacity: 0.5;
-    z-index:101;
+    z-index: 101;
+    background-color: white;
+    border-radius: 50%;
+    padding: 3px;
 }
 .case__exit:before, .case__exit:after {
     position: absolute;
-    left: 15px;
+    left: 18px;
     content: ' ';
     height: 33px;
     width: 2px;
@@ -851,11 +890,11 @@ header nav#menuPunkter.slideIn {
 }
 .case__container{
     display:none;
-    padding-bottom:200px;
+    padding-bottom:100px;
 }
 .case__featured-image img{
     width:100%;
-    filter:brightness(0.8);
+    
 }
 .case__info{
     padding:20px;
@@ -881,12 +920,16 @@ header nav#menuPunkter.slideIn {
     flex-direction:column;
 }
 .case__section_info{
-    padding:20px;
+    padding-left:10%;
+    padding-right:10%;
+    padding-bottom: 50px;
+    
 }
 .case__section_gif{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 7%;
 }
 .case__section_gif img{
     width: 100%;
@@ -931,6 +974,55 @@ header nav#menuPunkter.slideIn {
 .case__section--detaljer {
     display: flex;
     flex-direction: row;
+    padding-top: 50px;
+}
+.featured-hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("img/cases/buchwald_cover.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: 75% 25%;
+}
+.featured-hero-image1 {
+    background-image: url("img/cases/bryllupsbartender_cover.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: 75% 25%;
+}
+
+.featured-hero-text {
+    color: white;
+    top: 40%;
+    left: 10%;
+    position: absolute;
+    width: 80%;
+    font-size: 1.2em;
+}
+.featured-hero-text1 {
+    color: black;
+    top: 40%;
+    left: 10%;
+    position: absolute;
+    width: 80%;
+    font-size: 1.2em;
+}
+.featured-hero-text p, .featured-hero-text1 p {
+    margin-top: 25px;
+}
+.case__link {
+    color: white!IMPORTANT;
+}
+.case__landing{
+    height:100vh;
+}
+.featured-hero-title {
+    margin: 0 auto;
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -943,19 +1035,24 @@ header nav#menuPunkter.slideIn {
         margin-top:100px;
     }
     .case__section h3{
-        font-size:2.75em;
+        font-size:2em;
     }
     .case__section p{
-        font-size:20px;
+        font-size:18px;
     }
     .case__section a{
-        font-size:20px;
+        font-size:18px;
+    }
+    .featured-hero-text p {
+        font-size: 18px;
+    }
+    .featured-hero-text, .featured-hero-text1 {
+        font-size: 1.5em;
+        top: 45%;
+        width: 45%;
     }
     .case__section.case__landing{
         padding: 0;
-    }
-    .case__landing{
-        height:100vh;
     }
     .case__featured-image img{
         width: 100%;
@@ -971,11 +1068,12 @@ header nav#menuPunkter.slideIn {
     .case__section_info{
         display: flex;
         flex-direction: column;
-        padding: 0 150px 0 50px;
+        padding-left: 10%;
         justify-content: center;
     }
     .case__section_image{
         width: 40%;
+        padding-right: 5%;
     }  
     .case__section_info{
         width: 60%;
@@ -986,7 +1084,12 @@ header nav#menuPunkter.slideIn {
     .case__video{
         padding:125px 20px;
     }
+
 }
+
+    
+    
+
 
 /* ----> About Us <---- */
 
@@ -1221,8 +1324,6 @@ footer div img {
         padding-bottom: 50px;
     }
     .forside-bg {
-        padding-right: 5.15%;
-        padding-left: 5.15%; 
         box-sizing: border-box;
     }
     .forside-bg img {
@@ -1242,6 +1343,7 @@ footer div img {
     }
     
 }
+
 /*=== SERVICES ===*/
 
 #services{
