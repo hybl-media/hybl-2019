@@ -21,6 +21,37 @@ $(document).ready(function(){
             $(".services__info-film").appendTo(".services__info");
             $(".services__info-illustration").appendTo(".services__info");
             $(".services__info-webdesign").appendTo(".services__info");
+
+            startCycleLoop();
+
+            $(".estimering__step-website").hover(function() 
+            {iconShow("website")}, function() {iconsHide()});
+        
+            $(".estimering__step-cart").hover(function() 
+            {iconShow("cart")}, function() {iconsHide()});
+        
+            $(".estimering__step-pen").hover(function() 
+            {iconShow("pen")}, function() {iconsHide()});
+        
+            $(".estimering__step-film").hover(function() 
+            {iconShow("film")}, function() {iconsHide()});
+
+            $(".services__webshop").hover(function(){
+                showInfo("webshop");
+                cycleInfo = false;
+            })
+            $(".services__film").hover(function(){
+                showInfo("film");
+                cycleInfo = false;
+            })
+            $(".services__illustration").hover(function(){
+                showInfo("illustration");
+                cycleInfo = false;
+            })
+            $(".services__webdesign").hover(function(){
+                showInfo("webdesign");
+                cycleInfo = false;
+            })
         }
 
 
@@ -128,17 +159,7 @@ $(document).ready(function(){
 
     // Services icon hover effekt
 
-    $(".estimering__step-website").hover(function() 
-    {iconShow("website")}, function() {iconsHide()});
 
-    $(".estimering__step-cart").hover(function() 
-    {iconShow("cart")}, function() {iconsHide()});
-
-    $(".estimering__step-pen").hover(function() 
-    {iconShow("pen")}, function() {iconsHide()});
-
-    $(".estimering__step-film").hover(function() 
-    {iconShow("film")}, function() {iconsHide()});
 
     function iconShow(icon) {
         $(".estimering__icons img").hide();
@@ -153,22 +174,7 @@ $(document).ready(function(){
 
     // Services info text
 
-    $(".services__webshop").hover(function(){
-        showInfo("webshop");
-        cycleInfo = false;
-    })
-    $(".services__film").hover(function(){
-        showInfo("film");
-        cycleInfo = false;
-    })
-    $(".services__illustration").hover(function(){
-        showInfo("illustration");
-        cycleInfo = false;
-    })
-    $(".services__webdesign").hover(function(){
-        showInfo("webdesign");
-        cycleInfo = false;
-    })
+
 
     function showInfo(service){ // Hvis info tekst baseret på service
         var infoText = $(".services__info-" + service);
@@ -186,7 +192,6 @@ $(document).ready(function(){
 
         setInterval(function cycle(){
             if(cycleInfo){ // Kør kun loop hvis brugeren ikke har interageret
-
                 showInfo(services[current]);
                 $(".services__block").removeClass("simulated-hover");
                 $(".services__" + services[current]).addClass("simulated-hover");
@@ -201,10 +206,11 @@ $(document).ready(function(){
         }(), 4000)
     }
 
+
+
     $(".services__block").hover(function(){ // Fjern simuleret hover effekt hvis brugeren selv interagerer
         $(".services__block").removeClass("simulated-hover");
     })
-    startCycleLoop();
 
     // ryk af service tekst til telefon
 

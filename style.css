@@ -1401,9 +1401,9 @@ footer div img {
 
 .services__illustration {
     display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .services__webdesign {
@@ -1419,20 +1419,7 @@ align-items: center;
     width:200px;
     height:200px;
 }
-.services__block:hover img{
-    animation-name: switcher;
-    animation-iteration-count:infinite;
-    animation-direction:alternate;
-    animation-fill-mode:forwards;
-    animation-duration:0.2s;
-}
-.services__block.simulated-hover img{
-    animation-name: switcher;
-    animation-iteration-count:infinite;
-    animation-direction:alternate;
-    animation-fill-mode:forwards;
-    animation-duration:0.2s;
-}
+
 
 @keyframes switcher {
     50%{
@@ -1461,6 +1448,21 @@ align-items: center;
 @media only screen and (min-width:769px) {
     .services__info-text {
         display: none;
+    }
+
+    .services__block:hover img{
+        animation-name: switcher;
+        animation-iteration-count:infinite;
+        animation-direction:alternate;
+        animation-fill-mode:forwards;
+        animation-duration:0.2s;
+    }
+    .services__block.simulated-hover img{
+        animation-name: switcher;
+        animation-iteration-count:infinite;
+        animation-direction:alternate;
+        animation-fill-mode:forwards;
+        animation-duration:0.2s;
     }
 }
 
