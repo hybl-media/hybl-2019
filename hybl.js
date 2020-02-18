@@ -1,4 +1,36 @@
 $(document).ready(function(){
+
+    var isMobile;
+    var $window = $(window);
+
+    function checkWidth() {
+
+        isMobile = true;
+        var windowsize = $window.width();
+        if (windowsize > 769) {
+            isMobile = false;
+        }
+        
+        if (isMobile) {
+            $(".services__info-webshop").appendTo(".info-text-under-webshop");
+            $(".services__info-film").appendTo(".info-text-under-film");
+            $(".services__info-illustration").appendTo(".info-text-under-illustration");
+            $(".services__info-webdesign").appendTo(".info-text-under-webdesign");
+        } else {
+            $(".services__info-webshop").appendTo(".services__info");
+            $(".services__info-film").appendTo(".services__info");
+            $(".services__info-illustration").appendTo(".services__info");
+            $(".services__info-webdesign").appendTo(".services__info");
+        }
+
+
+    }
+    
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(checkWidth);
+
     var currentStep = 1;
     $(".estimering__open").click(function(){
         openEstimater();
@@ -120,6 +152,9 @@ $(document).ready(function(){
         $(".services__block").removeClass("simulated-hover");
     })
     startCycleLoop();
+
+    // ryk af service tekst til telefon
+
 
 
     //CASES
