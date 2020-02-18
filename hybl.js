@@ -52,6 +52,7 @@ $(document).ready(function(){
                 showInfo("webdesign");
                 cycleInfo = false;
             })
+
         }
 
 
@@ -185,10 +186,10 @@ $(document).ready(function(){
     }
 
     var cycleInfo = true;
-
     function startCycleLoop(){ // Loop igennem de forskellige services
         var services = ["webshop", "film", "illustration", "webdesign"];
         var current = 0;
+        console.log("hej");
 
         setInterval(function cycle(){
             if(cycleInfo){ // Kør kun loop hvis brugeren ikke har interageret
@@ -211,6 +212,7 @@ $(document).ready(function(){
     $(".services__block").hover(function(){ // Fjern simuleret hover effekt hvis brugeren selv interagerer
         $(".services__block").removeClass("simulated-hover");
     })
+   
 
     // ryk af service tekst til telefon
 
