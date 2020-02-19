@@ -56,6 +56,15 @@ h3{
     margin:5px 0 5px 0;
 }
 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  #content-wrap {
+    padding-bottom: 10rem;    /* Footer height */
+  }
+
+
 /*=== TEXT STYLING ===*/
 .title--underline{
     display:flex;
@@ -720,7 +729,7 @@ header nav#menuPunkter.slideIn {
 
 .forside-bg{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     overflow: hidden;
     left: 0;
@@ -1020,9 +1029,15 @@ header nav#menuPunkter.slideIn {
 .featured-hero-text p, .featured-hero-text1 p {
     margin-top: 25px;
 }
-.case__link {
-    color: white!IMPORTANT;
+
+.featured-hero-text a {
+    color: white;
+    transition: 0.3s
 }
+.featured-hero-text a:hover {
+    color: #016b68;
+}
+
 .case__landing{
     height:100vh;
 }
@@ -1046,8 +1061,12 @@ header nav#menuPunkter.slideIn {
     .case__section p{
         font-size:18px;
     }
+    
     .case__section a{
         font-size:18px;
+    }
+    .kontakt-tekst p {
+        font-size: 18px;
     }
     .featured-hero-text p {
         font-size: 18px;
@@ -1142,30 +1161,48 @@ header nav#menuPunkter.slideIn {
 /* ----> KONTAKT-SIDE <---- */
 
 .kontakt-indhold {
-    display: flex; 
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .kontakt-tekst {
-    padding-left: 10%;
-    padding-right: 10%;
-    font-size: 0.8em;
-    margin-top: 200px;
+    margin-top: 180px;
+}
+.hybl-teamet {
+    padding-top: 150px;
+}
+.hybl-teamet div h2 {
+    margin: 0 auto;
 }
 .personer-kontakt {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    padding-top: 100px;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
-.personer-kontakt img {
-    height: 200px;
+.personer-kontakt div p {
+    text-align: center;
+    margin-top: 5px;
 }
+
+.personer-kontakt img {
+    height: 250px;
+    border-radius: 125px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+    margin-top: 25px;
+}
+
 
 /* ----> FOOTER  <---- */
 
-
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;            
+}
 .footer {
     display: flex;
     flex-wrap: wrap;
@@ -1265,9 +1302,6 @@ footer div img {
     .cases__item{
         width:40%;
     }
-    .kontakt-tekst {
-        font-size: 1em;
-     }
 }
 
 @media only screen and (min-width: 1080px) {

@@ -24,13 +24,13 @@ $(document).ready(function(){
         $(".estimering__container").removeClass("estimering__close").addClass("estimering__open");
         $(".estimering__container").css("display","flex");
         setTimeout(function(){
-            $("main").css("display","none");
+            $("#main-content").css("display","none");
         },animationTime)
     }
     function closeEstimater(){
         $(".estimering__container").removeClass("estimering__open").addClass("estimering__close");
         currentStep = 1;
-        $("main").css("display","block");
+        $("#main-content").css("display","block");
         setTimeout(function(){
             $(".estimering__container").css("display","none");
         },animationTime)
@@ -192,11 +192,11 @@ $(document).ready(function(){
         $(".case[data-id='" + currentCase + "']").removeClass("case__opening");
         $(".case[data-id='" + currentCase + "']").addClass("case__closing");
         currentCase = "";
-        $("main").css("display","block");
+        $("#main-content").css("display","block");
         window.scrollTo(0,0);
     }
     function openCase(currentCase){
-        $("main").css("display","none");
+        $("#main-content").css("display","none");
         $(".case[data-id='" + currentCase + "']").removeClass("case__closing");
         $(".case[data-id='" + currentCase + "']").addClass("case__opening");
         window.scrollTo(0,0);
