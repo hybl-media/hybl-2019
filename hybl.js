@@ -1,5 +1,67 @@
 $(document).ready(function(){
 
+    var isMobile;
+    var $window = $(window);
+
+    function checkWidth() {
+
+        isMobile = true;
+        var windowsize = $window.width();
+        if (windowsize > 769) {
+            isMobile = false;
+        }
+        
+        if (isMobile) {
+            $(".services__info-webshop").appendTo(".info-text-under-webshop");
+            $(".services__info-film").appendTo(".info-text-under-film");
+            $(".services__info-illustration").appendTo(".info-text-under-illustration");
+            $(".services__info-webdesign").appendTo(".info-text-under-webdesign");
+        } else {
+            $(".services__info-webshop").appendTo(".services__info");
+            $(".services__info-film").appendTo(".services__info");
+            $(".services__info-illustration").appendTo(".services__info");
+            $(".services__info-webdesign").appendTo(".services__info");
+
+            startCycleLoop();
+
+            $(".estimering__step-website").hover(function() 
+            {iconShow("website")}, function() {iconsHide()});
+        
+            $(".estimering__step-cart").hover(function() 
+            {iconShow("cart")}, function() {iconsHide()});
+        
+            $(".estimering__step-pen").hover(function() 
+            {iconShow("pen")}, function() {iconsHide()});
+        
+            $(".estimering__step-film").hover(function() 
+            {iconShow("film")}, function() {iconsHide()});
+
+            $(".services__webshop").hover(function(){
+                showInfo("webshop");
+                cycleInfo = false;
+            })
+            $(".services__film").hover(function(){
+                showInfo("film");
+                cycleInfo = false;
+            })
+            $(".services__illustration").hover(function(){
+                showInfo("illustration");
+                cycleInfo = false;
+            })
+            $(".services__webdesign").hover(function(){
+                showInfo("webdesign");
+                cycleInfo = false;
+            })
+
+        }
+
+
+    }
+    
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(checkWidth);
     // Estimer projekt
 
     const animationTime = 700 // miliseconds for open and close 
@@ -98,17 +160,7 @@ $(document).ready(function(){
 
     // Services icon hover effekt
 
-    $(".estimering__step-website").hover(function() 
-    {iconShow("website")}, function() {iconsHide()});
 
-    $(".estimering__step-cart").hover(function() 
-    {iconShow("cart")}, function() {iconsHide()});
-
-    $(".estimering__step-pen").hover(function() 
-    {iconShow("pen")}, function() {iconsHide()});
-
-    $(".estimering__step-film").hover(function() 
-    {iconShow("film")}, function() {iconsHide()});
 
     function iconShow(icon) {
         $(".estimering__icons img").hide();
@@ -123,22 +175,7 @@ $(document).ready(function(){
 
     // Services info text
 
-    $(".services__webshop").hover(function(){
-        showInfo("webshop");
-        cycleInfo = false;
-    })
-    $(".services__film").hover(function(){
-        showInfo("film");
-        cycleInfo = false;
-    })
-    $(".services__illustration").hover(function(){
-        showInfo("illustration");
-        cycleInfo = false;
-    })
-    $(".services__webdesign").hover(function(){
-        showInfo("webdesign");
-        cycleInfo = false;
-    })
+
 
     function showInfo(service){ // Hvis info tekst baseret på service
         var infoText = $(".services__info-" + service);
@@ -149,14 +186,13 @@ $(document).ready(function(){
     }
 
     var cycleInfo = true;
-
     function startCycleLoop(){ // Loop igennem de forskellige services
         var services = ["webshop", "film", "illustration", "webdesign"];
         var current = 0;
+        console.log("hej");
 
         setInterval(function cycle(){
             if(cycleInfo){ // Kør kun loop hvis brugeren ikke har interageret
-
                 showInfo(services[current]);
                 $(".services__block").removeClass("simulated-hover");
                 $(".services__" + services[current]).addClass("simulated-hover");
@@ -171,10 +207,15 @@ $(document).ready(function(){
         }(), 4000)
     }
 
+
+
     $(".services__block").hover(function(){ // Fjern simuleret hover effekt hvis brugeren selv interagerer
         $(".services__block").removeClass("simulated-hover");
     })
-    startCycleLoop();
+   
+
+    // ryk af service tekst til telefon
+
 
 
     //CASES
