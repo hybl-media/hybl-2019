@@ -865,21 +865,34 @@ header nav#menuPunkter.slideIn {
 }
 .case__exit {
     position: fixed;
-    right: 32px;
+    right: 7.15%;
     top: 32px;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     z-index: 101;
     background-color: white;
     border-radius: 50%;
     padding: 3px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+    transition:0.1s;
+}
+@media screen and (min-width: 1080px) {
+    .case__exit {
+        right: 5.15%;
+    }
+}
+.case__exit:hover, .case__exit:focus{
+    cursor:pointer;
+    transform:scale(1.02);
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20);
 }
 .case__exit:before, .case__exit:after {
     position: absolute;
     left: 18px;
+    top: 8px;
     content: ' ';
-    height: 33px;
-    width: 2px;
+    height: 25px;
+    width: 4px;
     background-color: #333;
 }
   .case__exit:before {
@@ -919,6 +932,11 @@ header nav#menuPunkter.slideIn {
 .case__section.case__section--alternate{
     flex-direction:column;
 }
+@media screen and (min-width: 769px) {
+    .case__section.case__section--alternate{
+        flex-direction:row;
+    }
+}
 .case__section_info{
     padding-left:10%;
     padding-right:10%;
@@ -949,7 +967,7 @@ header nav#menuPunkter.slideIn {
 .case__section_image img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .case__video{
     padding:30px 20px;
@@ -976,17 +994,13 @@ header nav#menuPunkter.slideIn {
     flex-direction: row;
     padding-top: 50px;
 }
-.featured-hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("img/cases/buchwalds__cover.jpg");
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    background-position: 75% 25%;
+.featured-hero-image.featured-hero-image--bryllupsbartender{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("img/cases/bryllupsbartender__cover.jpg");
 }
-.featured-hero-image1 {
-    background-image: url("img/cases/bryllupsbartender_cover.jpg");
+.featured-hero-image.featured-hero-image--buchwalds{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("img/cases/buchwalds__cover.jpg");
+}
+.featured-hero-image {
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -1003,7 +1017,7 @@ header nav#menuPunkter.slideIn {
     width: 80%;
     font-size: 1.2em;
 }
-.featured-hero-text1 {
+.featured-hero-text--black {
     color: black;
     top: 40%;
     left: 10%;
@@ -1011,7 +1025,7 @@ header nav#menuPunkter.slideIn {
     width: 80%;
     font-size: 1.2em;
 }
-.featured-hero-text p, .featured-hero-text1 p {
+.featured-hero-text p {
     margin-top: 25px;
 }
 .case__link {
@@ -1046,8 +1060,7 @@ header nav#menuPunkter.slideIn {
     .featured-hero-text p {
         font-size: 18px;
     }
-    .featured-hero-text, .featured-hero-text1 {
-        font-size: 1.5em;
+    .featured-hero-text {
         top: 45%;
         width: 45%;
     }
