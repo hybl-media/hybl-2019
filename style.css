@@ -694,6 +694,20 @@ header nav#menuPunkter.slideIn {
 .forside-tekst {
     background-color: white;
     position:relative;
+    transform:translateX(-100px);
+}
+@media screen and (min-width:1080px){
+    .forside-tekst{
+        animation: 1s subtleFadeInLeft forwards ease-out;
+    }
+}
+@keyframes subtleFadeInLeft{
+    0%{
+        transform:translateX(-100px);
+    }
+    100%{
+        transform:translateX(0);
+    }
 }
 
 .forside-tekst div:first-child {
