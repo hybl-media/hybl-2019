@@ -354,10 +354,7 @@ button.estimering__open:hover{
         width:100%;
         height:auto;
     }
-    .estimering__inner .estimering__formular{
-        height:100%;
-        padding-bottom:75px;
-    }
+  
     .estimering__intro h1{
         font-size:2rem;
     }
@@ -578,6 +575,20 @@ button.estimering__open:hover{
 .estimering__prisspænd input{
     width: 50%;
 }
+@media screen and (max-width:769px) {
+    .estimering__prisspænd {
+        display:block;
+    }
+    .estimering__prisspænd span {
+    display:none;
+    }
+    .estimering__prisspænd input {
+    width:100%;
+    }
+    .estimering__step input {
+	    box-sizing:border-box;
+	  }
+  }
 
 .estimering__step input{
     border: none;
