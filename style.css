@@ -1406,10 +1406,17 @@ footer div img {
     text-align: center;
     font-weight:600;
 }
+.services__icon-container {
+    position:relative;
+}
 .services__icon-container img {
     width:200px;
     height:200px;
+    position:absolute;
     display: inline-block;
+}
+.services__icon-container img:last-child {
+    opacity:0;
 }
 
 .services__webshop {
@@ -1449,13 +1456,18 @@ align-items: center;
 
 
 @keyframes switcher {
-    50%{
-        transform:translateY(0);
-    }50.0001%{
-        transform:translateY(-200px);
-    }100%{
-        transform:translateY(-200px)
-    }
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 1;
+	}
+	50.001% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
 }
 
 /*Services info */
@@ -1468,28 +1480,24 @@ align-items: center;
     animation: fadeInInfo 0.5s forwards;
 }
 .services__info-text{
-    width:50%;
-    margin:0 auto;
+    width:75%;
+    margin:10px auto 0;
     text-align:center;
 }
 @media only screen and (min-width:769px) {
     .services__info-text {
+        width:50%;
         display: none;
+        margin:0 auto;
     }
 
-    .services__block:hover img{
+    .services__block:hover img, .services__block.simulated-hover img{
         animation-name: switcher;
         animation-iteration-count:infinite;
-        animation-direction:alternate;
-        animation-fill-mode:forwards;
-        animation-duration:0.2s;
+        animation-duration:0.4s;
     }
-    .services__block.simulated-hover img{
-        animation-name: switcher;
-        animation-iteration-count:infinite;
-        animation-direction:alternate;
-        animation-fill-mode:forwards;
-        animation-duration:0.2s;
+    .services__block:hover img:last-child, .services__block.simulated-hover img:last-child{
+        animation-delay:0.2s;
     }
 }
 
