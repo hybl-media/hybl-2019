@@ -46,10 +46,6 @@ h1 {
 
 h2{
     font-weight:600;
-    font-size:3em;
-}
-h2{
-    font-weight:600;
     font-size:2em;
 }
 h3{
@@ -694,10 +690,10 @@ header nav#menuPunkter.slideIn {
 .forside-tekst {
     background-color: white;
     position:relative;
-    transform:translateX(-100px);
 }
 @media screen and (min-width:1080px){
     .forside-tekst{
+        transform:translateX(-100px);
         animation: 1s subtleFadeInLeft forwards ease-out;
     }
 }
@@ -932,6 +928,9 @@ header nav#menuPunkter.slideIn {
     margin-bottom:5px;
 }
 @media screen and (min-width: 1200px) {
+    .featured-hero-title {
+        font-size:2.5em;
+    }
     .case__section h2{
         font-size:2.5em !important;
     } 
@@ -949,6 +948,9 @@ header nav#menuPunkter.slideIn {
 @media screen and (min-width: 769px) {
     .case__section.case__section--alternate{
         flex-direction:row;
+    }
+    .case__video--wrapper{
+        max-width:75% !important;
     }
 }
 .case__section_info{
@@ -989,7 +991,7 @@ header nav#menuPunkter.slideIn {
 }
 .case__video--wrapper{
     overflow:hidden;
-    max-width:75%;
+    max-width:100%;
     margin:0 auto;
     -webkit-box-shadow: 10px 6px 59px 3px rgba(0,0,0,0.11);
     -moz-box-shadow: 10px 6px 59px 3px rgba(0,0,0,0.11);
@@ -1050,10 +1052,14 @@ header nav#menuPunkter.slideIn {
 }
 .featured-hero-title {
     margin: 0 auto;
-
+    font-size:9vw;
 }
 
 @media only screen and (min-width: 768px) {
+    .featured-hero-title {
+        margin: 0 auto;
+        font-size:2em;
+    }
     .case__section{
         flex-direction:row;
         padding: 100px 0 50px 0;
