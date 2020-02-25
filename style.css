@@ -1480,13 +1480,15 @@ align-items: center;
     animation: fadeInInfo 0.5s forwards;
 }
 .services__info-text{
-    width:50%;
-    margin:0 auto;
+    width:75%;
+    margin:10px auto 0;
     text-align:center;
 }
 @media only screen and (min-width:769px) {
     .services__info-text {
+        width:50%;
         display: none;
+        margin:0 auto;
     }
 
     .services__block:hover img, .services__block.simulated-hover img{
