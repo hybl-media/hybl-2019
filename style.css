@@ -1521,3 +1521,12 @@ align-items: center;
         height: 0;
     }
 }
+
+/* 404 page */
+#error-page div{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin:200px 0 100px 0;
+}
