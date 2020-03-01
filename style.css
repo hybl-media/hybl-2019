@@ -931,10 +931,10 @@ header nav#menuPunkter.slideIn {
 }
 .forside-bg img{
     width: auto;
-    height: 115%;
+    height: 110%;
     -o-object-fit: fill;
        object-fit: fill;
-    right: -125px;
+    right: -275px;
     bottom: 0;
 }
 
