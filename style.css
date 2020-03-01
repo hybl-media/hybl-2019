@@ -120,13 +120,13 @@ button.title--underline::after{
 
 .vertical-text {
     -webkit-writing-mode: vertical-lr;
-        -ms-writing-mode: tb-lr;
-            writing-mode: vertical-lr;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
     -webkit-text-orientation: mixed;
-            text-orientation: mixed;
+    text-orientation: mixed;
+    font-weight: normal;
     position: relative;
-    bottom: 230px;
-    margin-left: 20px;
+    bottom: 260px;
     font-size: 16px;
     height: 100px;
     cursor: pointer;
@@ -687,6 +687,13 @@ button.estimering__open:hover{
 
 .menuLinks {
     text-align: center;
+}
+
+.menuLinks li a {
+    color: black;
+}
+.menuLinks li a:hover {
+    color: #016b68;
 }
 
 header nav ul.menuLinks {
@@ -1418,6 +1425,47 @@ header nav#menuPunkter.slideIn {
     height: 25px;
     margin-top: 0;
 }
+/* ----> KONTAKT-SIDE <---- */
+
+.kontakt-indhold {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.kontakt-tekst {
+    margin-top: 180px;
+}
+.hybl-teamet {
+    padding-top: 150px;
+}
+.hybl-teamet div h2 {
+    margin: 0 auto;
+}
+.personer-kontakt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+.personer-kontakt div p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.personer-kontakt img {
+    height: 250px;
+    border-radius: 125px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+    margin-top: 25px;
+}
+.personer-kontakt div {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 /* ----> FOOTER  <---- */
 
 .footer {
