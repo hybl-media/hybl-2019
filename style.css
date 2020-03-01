@@ -922,20 +922,20 @@ header nav#menuPunkter.slideIn {
 }
 
 .forside-bg{
-    width: 100%;
+    width: 80%;
     height: 100%;
     top: 0;
     overflow: hidden;
-    left: 0;
     right: 0;
 }
 .forside-bg img{
-    width: auto;
+    width: 100%;
     height: 110%;
-    -o-object-fit: fill;
-       object-fit: fill;
-    right: -275px;
+    -o-object-fit: cover;
+        object-fit: cover;
+    right: -166px;
     bottom: 0;
+    position:absolute;
 }
 
 .tekst-boks {
@@ -1533,6 +1533,7 @@ footer div img {
         width:40%;
     }
 }
+
 @media only screen and (min-width: 1080px) {
     .cases__item{
         margin:50px;
@@ -1561,12 +1562,6 @@ footer div img {
         z-index: 1;
         height: 100%;
     }
-    .forside-bg img{
-        position: absolute;
-    }
-    .forside-bg{
-        position: absolute;
-    }
     .tekst-boks {
         height: 100vh;
         width: 35%;
@@ -1574,6 +1569,9 @@ footer div img {
     .forside-billede {
         position:absolute;
         height: 100%;
+    }
+    .forside-bg {
+        position:absolute;
     }
     #forside{
         height:100vh;
@@ -1599,16 +1597,24 @@ footer div img {
         flex-basis: 45%;
     }  
 }
-@media only screen and (max-width: 768px) {
-.forside-bg img {
-    height: 300px!IMPORTANT;
-    }
-.forside-bg {
-    height: 70%;
-    }
-} 
-@media only screen and (max-width: 1080px) {
 
+@media only screen and (max-width: 1080px) {
+    .forside-bg {
+        width:100%;
+        box-sizing: border-box;
+        height:500px !important;
+        position:relative;
+    }
+    .forside-bg img {
+        -o-object-fit: cover;
+        object-fit: cover;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        object-position: bottom;
+        height: 175%;
+        }
     .bundtekst {
         display: none;
     }
@@ -1625,20 +1631,7 @@ footer div img {
     .tekst-boks {
         padding-bottom: 50px;
     }
-    .forside-bg {
-        box-sizing: border-box;
-    }
-    .forside-bg img {
-        -o-object-fit: cover;
-           object-fit: cover;
-        right: -125px;
-        bottom: 0;
-        width: 100%;
-        -o-object-position: bottom;
-           object-position: bottom;
-        height: 500px;
-        }
-    }
+}
    
 
 @media only screen and (max-width: 1260px) {
