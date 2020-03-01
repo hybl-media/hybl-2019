@@ -1650,7 +1650,7 @@ footer div img {
     .forside-bg {
         width:100%;
         box-sizing: border-box;
-        height:500px !important;
+        height:400px !important;
         position:relative;
     }
     .forside-bg img {
@@ -1661,7 +1661,7 @@ footer div img {
         bottom: 0;
         width: 100%;
         object-position: bottom;
-        height: 175%;
+        height: 115%;
         }
     .bundtekst {
         display: none;
