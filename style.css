@@ -922,7 +922,7 @@ header nav#menuPunkter.slideIn {
 }
 
 .forside-bg{
-    width: 80%;
+    width: 100%;
     height: 100%;
     top: 0;
     overflow: hidden;
@@ -933,7 +933,7 @@ header nav#menuPunkter.slideIn {
     height: 110%;
     -o-object-fit: cover;
         object-fit: cover;
-    right: -166px;
+    right: -275px;
     bottom: 0;
     position:absolute;
 }
@@ -1557,8 +1557,8 @@ footer div img {
         width: 35%;
     }
     .forside-tekst {
-        clip-path: polygon(0% 0%, 55% 0%, 0% 300%, 0% 0%);
-        -webkit-clip-path: polygon(0% 0%, 55% 0%, 0% 300%, 0% 0%);
+        clip-path: polygon(0% 0%, 50% 0%, 0% 400%, 0% 0%);
+        -webkit-clip-path: polygon(0% 0%, 50% 0%, 0% 400%, 0% 0%);
         z-index: 1;
         height: 100%;
     }
